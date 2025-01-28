@@ -1,4 +1,5 @@
 import { RoutePaths } from "@shared/config/routes";
+import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import { Image } from "@ui/image";
 import cls from "./styles.module.scss";
@@ -23,7 +24,7 @@ export const NewsItem = (props: PropsType) => {
         </div>
       )}
       <time className={cls.newsDate} dateTime={date}>
-        {date}
+        {dayjs(date).format("DD.MM.YYYY")}
       </time>
       <div className={cls.newsTitle}>
         <Link to={RoutePaths.NEWS_DETAILS + id}>

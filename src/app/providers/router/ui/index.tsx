@@ -1,26 +1,9 @@
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import { PageLoader } from "@app/appLayout/ui/pageLoader";
 import { routeConfig } from "@shared/config/routes";
-import {
-  NavigateFunction,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
-
-export let routerNavigate: NavigateFunction;
+import { Route, Routes } from "react-router-dom";
 
 export const AppRouter = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  routerNavigate = navigate;
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
   return (
     <Routes>
       {Object.entries(routeConfig).map(([key, route]) => (

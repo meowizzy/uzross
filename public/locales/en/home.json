@@ -13,5 +13,16 @@
       "title": "10",
       "subtitle": "years of professional experience"
     }
+  },
+  "sections": {
+    "callback": "Call with us",
+    "services": "Services",
+    "products": "Our products",
+    "certificates": "Certificates and patents",
+    "about": "About us",
+    "news_section": {
+      "title": "News",
+      "anotherNews": "Another news"
+    }
   }
 }

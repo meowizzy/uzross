@@ -8,7 +8,7 @@ type PropsType<T> = {
   items?: number;
   className?: string;
   gap?: number;
-  render: (item: T) => ReactNode;
+  render: (item: T, idx?: number) => ReactNode;
   pagination?: Omit<PaginationProps, "className">;
 };
 
@@ -26,7 +26,7 @@ export const PaginationList = <T = unknown,>(props: PropsType<T>) => {
       <div className={classesCompose} style={styles}>
         {data.map((item, index) => (
           <div key={index} className={cls.paginationListColumn}>
-            {render(item)}
+            {render(item, index)}
           </div>
         ))}
       </div>

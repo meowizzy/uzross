@@ -19,12 +19,8 @@
     "prev": "Oldingisi",
     "next": "Keyingisi"
   },
-  "sections": {
-    "callback": "Contact us",
-    "services": "Services",
-    "products": "Our products",
-    "certificates": "Certificates and patents",
-    "about": "About us"
-  },
-  "viewMore": "Batafsil o’qish"
+  "buttons": {
+    "readAll": "Barchasini o’qish",
+    "viewMore": "Batafsil o’qish"
+  }
 }

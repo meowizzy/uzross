@@ -8,7 +8,7 @@ import { CallbackSkeleton } from "./callback.skeleton";
 import cls from "./styles.module.scss";
 
 export const CallbackSection = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("home");
   const { loading, phones, links } = useCompanyInfo();
 
   const renderContent = () => {

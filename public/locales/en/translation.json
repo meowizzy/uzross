@@ -1,8 +1,5 @@
 {
   "siteName": "UzRoss-Techno",
-  "meta": {
-    "title": "testEn"
-  },
   "labels": {
     "menu": "Menu"
   },
@@ -19,8 +16,8 @@
     "prev": "Previous",
     "next": "Next"
   },
-  "sections": {
-    "callback": "Biz bilan bog’laning"
-  },
-  "viewMore": "View more"
+  "buttons": {
+    "readAll": "Read more",
+    "viewMore": "View more"
+  }
 }

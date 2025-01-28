@@ -38,6 +38,7 @@
 .postDetailsBottom {
   max-width: 846px;
   margin: 56px auto 0;
+  width: 100%;
 }
 
 .postDetailsTitle {
@@ -54,7 +55,9 @@
 
 .postDetailsDate {
   color: var(--color-grey);
-  margin-bottom: 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+  text-transform: capitalize;
 }
 
 .skeletonDescription {

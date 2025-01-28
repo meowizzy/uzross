@@ -1,7 +1,8 @@
 import { memo } from "react";
 import { RoutePaths } from "@shared/config/routes";
+import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@ui/button";
 import { Image } from "@ui/image";
 import { PostsListItemModel } from "../../model/types/posts";
@@ -26,18 +27,22 @@ export const PostCard = memo((props: PropsType) => {
     <article className={cls.postCard}>
       <div className={cls.postCardTop}>
         <div className={cls.postCardImage}>
-          <Image src={data.filePath} alt={data.title} />
+          <Link to={RoutePaths.NEWS_DETAILS + data.id}>
+            <Image src={data.filePath} alt={data.title} />
+          </Link>
         </div>
       </div>
       <div className={cls.postCardBottom}>
         {!!data.title && (
           <div className={cls.postCardTitle}>
-            <span>{data.title}</span>
+            <Link to={RoutePaths.NEWS_DETAILS + data.id}>
+              <span>{data.title}</span>
+            </Link>
           </div>
         )}
         {!!data.createdDate && (
           <div className={cls.postCardDate}>
-            <span>{data.createdDate}</span>
+            <span>{dayjs(data.createdDate).format("MMMM DD, YYYY")}</span>
           </div>
         )}
         <Button
@@ -46,7 +51,7 @@ export const PostCard = memo((props: PropsType) => {
           onClick={onClickVisitDetails}
           className={cls.postCardButton}
         >
-          {t("viewMore")}
+          {t("buttons.viewMore")}
         </Button>
       </div>
     </article>

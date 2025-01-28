@@ -2,6 +2,7 @@ import { memo, useEffect, useState } from "react";
 import { $postsList, PostCard, PostCardSkeleton } from "@entities/post";
 import { Content } from "@widgets/content";
 import { PaginationList } from "@widgets/paginationList";
+import dayjs from "dayjs";
 import { useUnit } from "effector-react";
 import { useTranslation } from "react-i18next";
 import { useSkeleton } from "@ui/skeleton";
@@ -12,6 +13,12 @@ const NewsPage = () => {
   const { content: companyPostsData, number, totalPages } = data;
   const [page, setPage] = useState(number || 1);
   const skeletonItems = useSkeleton(6);
+
+  useEffect(() => {
+    return () => {
+      $postsList.reset();
+    };
+  }, []);
 
   useEffect(() => {
     $postsList.effect({ size: 6, page: page - 1 });

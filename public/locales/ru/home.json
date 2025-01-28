@@ -13,5 +13,16 @@
       "title": "10",
       "subtitle": "лет профессионального опыта"
     }
+  },
+  "sections": {
+    "callback": "Свяжитесь с нами",
+    "services": "Услуги",
+    "products": "Наша продукция",
+    "certificates": "Сертификаты и патенты",
+    "about": "О нас",
+    "news_section": {
+      "title": "Новости",
+      "anotherNews": "Другие новости"
+    }
   }
 }

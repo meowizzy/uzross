@@ -13,5 +13,16 @@
       "title": "10",
       "subtitle": "yil professional tajriba"
     }
+  },
+  "sections": {
+    "callback": "Biz bilan bog’laning",
+    "services": "Xizmatlar",
+    "products": "Mahsulotlarimiz",
+    "certificates": "Sertifikatlar va patentlar",
+    "about": "Biz haqimizda",
+    "news_section": {
+      "title": "Yangiliklar",
+      "anotherNews": "Boshqa yangiliklar"
+    }
   }
 }
