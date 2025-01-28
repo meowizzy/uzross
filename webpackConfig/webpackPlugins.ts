@@ -36,12 +36,12 @@ export function webpackPlugins(
   ];
 
   console.log(isDev)
-  //
-  // if (isDev) {
-  //   plugins.push(
-  //     new ReactRefreshPlugin()
-  //   );
-  // }
+
+  if (isDev) {
+    plugins.push(
+      new ReactRefreshPlugin()
+    );
+  }
 
   return plugins;
 }
