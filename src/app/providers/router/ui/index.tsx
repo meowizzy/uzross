@@ -31,13 +31,14 @@ export const AppRouter = () => {
 
   return (
     <>
+      {progress && <TopBarProgress />}
       <Routes>
         {Object.entries(routeConfig).map(([key, route]) => (
           <Route
             key={key}
             path={route.path}
             element={
-              <Suspense fallback={<TopBarProgress />}>{route.element}</Suspense>
+              <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
             }
           />
         ))}
