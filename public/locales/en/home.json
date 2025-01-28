@@ -1,0 +1,17 @@
+{
+  "test": "testEn",
+  "banner": {
+    "title": "Modern radar solutions",
+    "subtitle": "Radar systems and professional installation services",
+    "button_first": "Our production",
+    "button_second": "About us",
+    "number_first": {
+      "title": "20000",
+      "subtitle": "installed radars"
+    },
+    "number_second": {
+      "title": "10",
+      "subtitle": "years of professional experience"
+    }
+  }
+}

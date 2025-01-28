@@ -1,0 +1,30 @@
+{
+  "siteName": "UzRoss-Techno",
+  "meta": {
+    "title": "testUz"
+  },
+  "labels": {
+    "menu": "Menu"
+  },
+  "menuList": {
+    "home": "Bosh sahifa",
+    "about": "Kompaniya haqida",
+    "products": "Bizning mahsulotlar",
+    "services": "Xizmatlar",
+    "news": "Yangiliklar",
+    "contacts": "Kontaktlar"
+  },
+  "copyrightText": "Barcha huquqlar kafolatlangan.",
+  "pagination": {
+    "prev": "Oldingisi",
+    "next": "Keyingisi"
+  },
+  "sections": {
+    "callback": "Contact us",
+    "services": "Services",
+    "products": "Our products",
+    "certificates": "Certificates and patents",
+    "about": "About us"
+  },
+  "viewMore": "Batafsil o’qish"
+}

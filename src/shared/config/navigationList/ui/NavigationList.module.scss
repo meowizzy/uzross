@@ -1,0 +1,37 @@
+.navigation {
+  visibility: visible;
+}
+
+.navigationList {
+  display: flex;
+  list-style: none;
+}
+
+.navigationListItem {
+  margin-left: 32px;
+
+  & > :global(a) {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+}
+
+.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.vertical {
+  flex-direction: column;
+  .navigationListItem {
+    margin-left: 0;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

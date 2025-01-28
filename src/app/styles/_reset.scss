@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+select,
+input,
+textarea,
+ul,
+ol,
+li,
+a,
+span,
+i,
+b {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+select,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+}

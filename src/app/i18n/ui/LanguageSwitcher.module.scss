@@ -1,0 +1,65 @@
+$openerHeight: 24px;
+
+.langSwitcher {
+  position: relative;
+}
+
+.langSwitcherDropDown {
+  position: absolute;
+  padding: 6px 0;
+  transform: translateY(5px);
+  top: calc(var(--header-height) - $openerHeight + 2px);
+  left: 0;
+  min-width: 143px;
+  background-color: var(--color-light-grey);
+  border-radius: var(--radius-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+  overflow: hidden;
+}
+
+.langSwitcherOpener {
+  font-weight: 700;
+  min-height: $openerHeight;
+  & :global(svg) {
+    transform: rotateX(0);
+    width: $openerHeight;
+    height: $openerHeight;
+    margin-right: 8px;
+    color: var(--color-grey);
+  }
+  min-width: 60px;
+}
+
+.opened {
+  & > .langSwitcherDropDown {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  & > .langSwitcherOpener {
+    & :global(svg) {
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+.langSwitcherOption {
+  width: 100%;
+  padding: 10px 12px;
+  transition: color var(--transition);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.langSwitcherOptionSelected {
+  color: var(--color-primary);
+  pointer-events: none;
+}

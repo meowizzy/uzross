@@ -1,0 +1,34 @@
+import React from "react";
+import { PostsListItemModel } from "@entities/post";
+import cn from "classnames";
+import { Image } from "@ui/image";
+import cls from "./styles.module.scss";
+
+type PropsType = {
+  data: PostsListItemModel;
+  className?: string;
+};
+
+export const PostDetails = (props: PropsType) => {
+  const { data, className } = props;
+  const classesCompose = cn(cls.postDetails, className);
+
+  return (
+    <article className={classesCompose}>
+      <div className={cls.postDetailsImage}>
+        <Image src={data.filePath} alt={data.title} />
+      </div>
+      <div className={cls.postDetailsBottom}>
+        {!!data.createdDate && (
+          <time className={cls.postDetailsDate} dateTime={data.createdDate}>
+            {data.createdDate}
+          </time>
+        )}
+        {!!data.title && <h1 className={cls.postDetailsTitle}>{data.title}</h1>}
+        {!!data.description && (
+          <div className={cls.postDetailsDescription}>{data.description}</div>
+        )}
+      </div>
+    </article>
+  );
+};

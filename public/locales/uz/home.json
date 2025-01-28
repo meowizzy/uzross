@@ -1,0 +1,17 @@
+{
+  "test": "testUz",
+  "banner": {
+    "title": "Zamonaviy radar yechimlari",
+    "subtitle": "Radar tizimlari va professional o‘rnatish xizmatlari",
+    "button_first": "Bizning mahsulotlar",
+    "button_second": "Biz haqimizda",
+    "number_first": {
+      "title": "20000",
+      "subtitle": "ta o’rnatilgan radarlar"
+    },
+    "number_second": {
+      "title": "10",
+      "subtitle": "yil professional tajriba"
+    }
+  }
+}

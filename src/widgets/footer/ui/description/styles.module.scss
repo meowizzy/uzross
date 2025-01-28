@@ -1,0 +1,13 @@
+.description {
+  color: var(--color-grey);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.skeletonWrapper, .description {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 32px;
+}

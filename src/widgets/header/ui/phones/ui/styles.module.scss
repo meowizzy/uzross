@@ -1,0 +1,11 @@
+.phones {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+
+  a {
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,67 @@
+:root {
+  --transition: .3s;
+
+  --font-initial: "Arial", "Helvetica", sans-serif;
+  --font-main: "NTSomic", var(--font-initial);
+
+  --container-max-width: 1280px;
+  --header-height: 80px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 250px;
+
+  --height-sm: 32px;
+  --height-md: 40px;
+  --height-lg: 48px;
+
+  --padding-horizontal-sm: 12px;
+  --padding-vertical-sm: 12px;
+
+  --padding-horizontal-md: 14px;
+  --padding-vertical-md: 14px;
+
+  --padding-horizontal-lg: 16px;
+  --padding-vertical-lg: 16px;
+
+  --input-padding-horizontal-sm: var(--padding-horizontal-sm);
+  --input-padding-vertical-sm: var(--padding-vertical-sm);
+  --input-height-sm: var(--height-sm);
+
+  --input-padding-horizontal-md: var(--padding-horizontal-md);
+  --input-padding-vertical-md: var(--padding-vertical-md);
+  --input-height-md: var(--height-md);
+
+  --input-padding-horizontal-lg: var(--padding-horizontal-lg);
+  --input-padding-vertical-lg: var(--padding-vertical-lg);
+  --input-height-lg: var(--height-lg);
+
+  --input-prefix-size-sm: 18px;
+  --input-suffix-size-sm: 18px;
+  --input-prefix-size-md: 20px;
+  --input-suffix-size-md: 20px;
+  --input-prefix-size-lg: 20px;
+  --input-suffix-size-lg: 20px;
+
+  --textarea-padding-horizontal-sm: var(--padding-horizontal-sm);
+  --textarea-padding-vertical-sm: var(--padding-vertical-sm);
+
+  --textarea-padding-horizontal-md: var(--padding-horizontal-md);
+  --textarea-padding-vertical-md: var(--padding-vertical-md);
+
+  --textarea-padding-horizontal-lg: var(--padding-horizontal-lg);
+  --textarea-padding-vertical-lg: var(--padding-vertical-lg);
+
+  --button-padding-horizontal-sm: 10px;
+  --button-padding-vertical-sm: 8px;
+  --button-height-sm: var(--height-sm);
+
+  --button-padding-horizontal-md: 24px;
+  --button-padding-vertical-md: 12px;
+  --button-height-md: var(--height-md);
+
+  --button-padding-horizontal-lg: 32px;
+  --button-padding-vertical-lg: 16px;
+  --button-height-lg: var(--height-lg);
+}

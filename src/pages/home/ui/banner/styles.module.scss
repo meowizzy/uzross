@@ -1,0 +1,112 @@
+.banner {
+  & > :global(.container) {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+.bannerTop {
+  margin-bottom: 48px;
+}
+
+.bannerTitle {
+  margin-bottom: 16px;
+  font-size: 76.8px;
+  font-weight: 700;
+}
+
+.bannerSubtitle {
+  margin-bottom: 32px;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.bannerButtons {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.bannerBottom {
+  min-height: 432px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-light-grey);
+  position: relative;
+  background-image: url("@assets/images/bannerBg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bannerInfoBlock {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  padding: 16px;
+  width: 39.7%;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+
+  & .bannerInfoBlockInner {
+    background-color: var(--color-light-grey);
+    border-radius: var(--radius-md);
+    padding: 37.5px 24px;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    min-height: 158px;
+  }
+
+  & .bannerInfoBlockNumber {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: var(--color-text);
+  }
+
+  & .bannerInfoBlockNumberTitle {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  & .bannerInfoBlockNumberText {
+    font-size: 18px;
+  }
+}
+
+.bannerAnimatedCircle {
+  width: 279px;
+  height: 279px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bannerAnimatedCircleCode {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    z-index: 1;
+  }
+
+  svg:not(.bannerAnimatedCircleCode) {
+    animation: rotating 30s infinite linear;
+  }
+}
+
+@keyframes rotating {
+  100% {
+    transform: rotate(-360deg);
+  }
+}

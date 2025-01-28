@@ -1,0 +1,18 @@
+.section {
+  & > :global(.container) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .title {
+    margin-bottom: 56px;
+  }
+}
+
+.light {
+  background-color: var(--color-white);
+}
+
+.dark {
+  background-color: var(--color-light-grey);
+}

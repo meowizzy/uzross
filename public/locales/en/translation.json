@@ -1,0 +1,26 @@
+{
+  "siteName": "UzRoss-Techno",
+  "meta": {
+    "title": "testEn"
+  },
+  "labels": {
+    "menu": "Menu"
+  },
+  "menuList": {
+    "home": "Home",
+    "about": "About company",
+    "products": "Our production",
+    "services": "Services",
+    "news": "News",
+    "contacts": "Contacts"
+  },
+  "copyrightText": "All rights reserved.",
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "sections": {
+    "callback": "Biz bilan bog’laning"
+  },
+  "viewMore": "View more"
+}

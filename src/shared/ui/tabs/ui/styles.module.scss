@@ -1,0 +1,40 @@
+.tabs {
+  position: relative;
+}
+
+.tabsNavigation {
+  display: flex;
+  align-items: center;
+  column-gap: 48px;
+}
+
+.tabsList {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  list-style: none;
+  flex-grow: 1;
+}
+
+.tabButton {
+  padding: 0px 8px 24px;
+  border-bottom: 4px solid transparent;
+}
+
+.tabsItem {
+  position: relative;
+
+  &:global(.current) {
+    .tabButton {
+      border-bottom: 4px solid rgba(218, 221, 222, 1);
+    }
+  }
+}
+
+.tabsContent {
+  padding: 24px 0;
+}
+
+.suffix {
+  margin-left: auto;
+}

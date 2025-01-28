@@ -1,0 +1,29 @@
+.breadCrumbs {
+  width: 100%;
+}
+
+.breadCrumbsList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.breadCrumbsItem, .breadCrumbsSeparator {
+  font-size: 14px;
+}
+
+.breadCrumbsSeparator {
+  color: rgba(218, 221, 222, 1);
+  margin: 0 8px;
+}
+
+.breadCrumbsCurrent {
+  color: rgba(218, 221, 222, 1);
+}
+
+.dynamicCrumb {
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

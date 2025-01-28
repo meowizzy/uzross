@@ -1,0 +1,29 @@
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.contactsListRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    color: var(--color-grey);
+  }
+
+  span {
+    color: var(--color-grey);
+    font-weight: 700;
+    margin: 0 12px;
+  }
+}
+
+.contacts {
+  visibility: visible;
+}

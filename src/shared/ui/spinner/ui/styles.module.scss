@@ -1,0 +1,73 @@
+.spinner {
+  box-sizing: border-box;
+  position: relative;
+  animation: spin 1s linear infinite;
+}
+
+.abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner:after, .spinner:before, .spinner > span {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(62, 64, 149, 1);
+  animation: spin 1s linear infinite;
+  transform-origin: 50% 0%;
+}
+.spinner:before {
+  transform-origin: 0% 50%;
+  background: rgb(237, 50, 55, 1);
+}
+
+.spinner span {
+  transform-origin: 100% 0%;
+  background: rgb(237, 50, 55, 1);
+}
+
+.spinner span {
+  background-color: var(--color-primary);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sm {
+  width: 32px;
+  height: 32px;
+
+  &:before, &:after, span {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.md {
+  width: 48px;
+  height: 48px;
+
+  &:before, &:after, span {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.lg {
+  width: 60px;
+  height: 60px;
+
+  &:before, &:after, span {
+    width: 30px;
+    height: 30px;
+  }
+}

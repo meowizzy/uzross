@@ -1,0 +1,58 @@
+:root {
+  --color-white-rgb: 255,255,255;
+  --color-white: rgb(var(--color-white-rgb));
+
+  --color-black-rgb: 0,0,0;
+  --color-black: rgb(var(--color-black-rgb));
+
+  --color-text-rgb: 19, 18, 20;
+  --color-text: rgb(var(--color-text-rgb));
+
+  --color-light-grey-rgb: 244, 246, 247;
+  --color-light-grey: rgb(var(--color-light-grey-rgb));
+
+  --color-grey-rgb: 137, 141, 143;
+  --color-grey: rgb(var(--color-grey-rgb));
+
+  --color-dark-grey-rgb: 47, 49, 51;
+  --color-dark-grey: rgb(var(--color-dark-grey-rgb));
+
+  --color-grey-500-rgb: 107, 114, 128;
+  --color-grey-500: rgb(var(--color-grey-500-rgb));
+
+  --color-grey-300-rgb: 209, 213, 219;
+  --color-grey-300: rgb(var(--color-grey-300-rgb));
+
+  --color-grey-muted-rgb: 110, 115, 117;
+  --color-grey-muted: rgb(var(--color-grey-muted-rgb));
+
+  --color-border-rgb: 230, 233, 235;
+  --color-border: rgb(var(--color-border-rgb));
+
+  --color-primary-rgb: 36, 170, 219;
+  --color-primary: rgb(var(--color-primary-rgb));
+
+  --color-primary-hover-rgb: 104,186,216;
+  --color-primary-hover: rgb(var(--color-primary-hover-rgb));
+
+  --color-accent-rgb: 202, 235, 246;
+  --color-accent: rgb(var(--color-accent-rgb));
+
+  --color-accent-hover-rgb: #000;
+  --color-accent-hover: rgb(var(--color-primary-hover-rgb));
+
+  --color-danger-rgb: 194, 86, 86;
+  --color-danger: rgb(var(--color-danger-rgb));
+
+  --color-danger-hover-rgb: 213, 98, 98;
+  --color-danger-hover: rgb(var(--color-danger-hover-rgb));
+
+  --color-secondary-rgb: var(--color-dark-grey-rgb);
+  --color-secondary: rgb(var(--color-secondary-rgb));
+
+  --color-secondary-hover-rgb: 59,61,64;
+  --color-secondary-hover: rgb(var(--color-secondary-hover-rgb));
+
+  --color-footer-rgb: 31,34,36;
+  --color-footer: rgb(var(--color-footer-rgb));
+}

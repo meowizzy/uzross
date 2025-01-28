@@ -1,0 +1,5 @@
+@use "./mixins/font-face" as *;
+
+@include font-face("NTSomic", "NTSomic/NTSomic-Regular", 400, normal);
+@include font-face("NTSomic", "NTSomic/NTSomic-Medium", 500, normal);
+@include font-face("NTSomic", "NTSomic/NTSomic-Bold", 700, normal);

@@ -1,0 +1,5 @@
+@mixin bg-op($size, $pos, $repeat) {
+  background-size: $size;
+  background-position: $pos;
+  background-repeat: $repeat;
+}

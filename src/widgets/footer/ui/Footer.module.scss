@@ -1,0 +1,41 @@
+.footer {
+  background-color: var(--color-footer);
+  color: var(--color-border);
+
+  & :global(.container) {
+   padding: 80px 0 48px;
+    background-image: url("@assets/images/footerBg.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center bottom;
+  }
+}
+
+.footerTop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 66px;
+  column-gap: 30px;
+}
+
+.footerTopLeft {
+  max-width: 307px;
+}
+
+.footerBot {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footerButtonUp {
+  color: var(--color-primary);
+}
+
+.footerBotCopyright {
+  color: var(--color-grey);
+  font-size: 12px;
+}
