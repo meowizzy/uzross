@@ -35,12 +35,13 @@ export function webpackPlugins(
     }),
   ];
 
-  if (isDev) {
-    plugins.push(
-      new ReactRefreshPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
-    );
-  }
+  console.log(isDev)
+  //
+  // if (isDev) {
+  //   plugins.push(
+  //     new ReactRefreshPlugin()
+  //   );
+  // }
 
   return plugins;
 }
