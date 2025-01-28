@@ -44,7 +44,7 @@ export default (env: TWebpackEnv): WebpackConfiguration => {
       filename: "bundle.[contenthash:8].js",
       chunkFilename: "chunk.[contenthash:8].js",
       clean: true,
-      publicPath: "./",
+      publicPath: "/",
     },
   };
 };
