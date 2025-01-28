@@ -12,6 +12,8 @@ export default (env: TWebpackEnv): WebpackConfiguration => {
   const mode = env.mode || "development";
   const isDev = mode === "development";
 
+  console.log("ENV BASE URL########### ", process.env.BASE_URL);
+
   dotenv.config();
 
   const options: TWebpackOptions = {
