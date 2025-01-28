@@ -7,6 +7,14 @@
     {
       "source": "/api/:path*/",
       "destination": "http://84.54.75.248:9090/api/:path*/"
+    },
+    {
+      "source": "/folder/:path*",
+      "destination": "http://84.54.75.248:9090/folder/:path*"
+    },
+    {
+      "source": "/folder/:path*/",
+      "destination": "http://84.54.75.248:9090/folder/:path*/"
     }
   ]
 }
