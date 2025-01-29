@@ -1,4 +1,13 @@
-import { FC, Key, memo, ReactNode, useMemo, useState } from "react";
+import {
+  FC,
+  Key,
+  memo,
+  ReactNode,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import cn from "classnames";
 import { Button } from "@ui/button";
 import { TabsDataType } from "../types";
@@ -11,6 +20,7 @@ type PropsType = {
   onChange?: (key: Key, currentTab: TabsDataType) => void;
   tabSize?: "sm" | "md" | "lg";
   suffix?: ReactNode;
+  trigger?: boolean;
 };
 
 export const Tabs: FC<PropsType> = memo((props) => {
@@ -19,10 +29,12 @@ export const Tabs: FC<PropsType> = memo((props) => {
     defaultKey,
     className,
     onChange,
+    trigger,
     tabSize = "md",
     suffix,
   } = props;
   const [currentKey, setCurrentKey] = useState<Key | undefined>(defaultKey);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   const currentTab = useMemo(() => {
     let current;
@@ -36,6 +48,12 @@ export const Tabs: FC<PropsType> = memo((props) => {
 
     return current ? current : items[0];
   }, [items, currentKey]);
+
+  useEffect(() => {
+    if (trigger && triggerRef.current) {
+      triggerRef.current.click();
+    }
+  }, [triggerRef, trigger]);
 
   const onClickTabChange = (key: Key, currentTab: TabsDataType) => {
     setCurrentKey(key);
@@ -66,6 +84,7 @@ export const Tabs: FC<PropsType> = memo((props) => {
                 className={cn(cls.tabsItem, isCurrentTab && "current")}
               >
                 <Button
+                  ref={item.key === currentKey ? triggerRef : null}
                   className={cls.tabButton}
                   theme={"clear"}
                   size={tabSize}

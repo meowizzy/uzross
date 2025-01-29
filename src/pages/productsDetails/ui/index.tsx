@@ -26,7 +26,7 @@ const ProductsDetailsPage = () => {
   const {
     data: vendorProductDetailsData,
     loading: vendorProductDetailsLoading,
-    error: vendorProductDetails,
+    error: vendorProductDetailsError,
   } = useUnit($vendorProductDetails.store);
 
   useEffect(() => {

@@ -23,10 +23,12 @@
 
 .tabsItem {
   position: relative;
+  color: var(--color-grey);
 
   &:global(.current) {
     .tabButton {
       border-bottom: 4px solid rgba(218, 221, 222, 1);
+      color: var(--color-text);
     }
   }
 }

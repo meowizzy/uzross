@@ -23,6 +23,8 @@
     "news_section": {
       "title": "News",
       "anotherNews": "Another news"
-    }
+    },
+    "customers": "Customers",
+    "partners": "Partners"
   }
 }

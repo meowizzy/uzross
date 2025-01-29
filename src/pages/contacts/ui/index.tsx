@@ -51,7 +51,7 @@ const Contacts = () => {
       {loading ? (
         <ContactsSkeleton />
       ) : (
-        <Section title={"Contacts"} size={"lg"} titleSize={"xxl"}>
+        <Section title={t("title")} size={"lg"} titleSize={"xxl"}>
           <div className={cls.contacts}>
             <ContactsItem label={t("address")}>{address.address}</ContactsItem>
             <ContactsItem label={t("email")}>

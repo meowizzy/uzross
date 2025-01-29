@@ -1,6 +1,6 @@
-import { ProductDetailsSlider } from "@entities/product/ui/productDetails/slider";
 import { Image } from "@ui/image";
 import { FilesType } from "../../model/types/vendorProductsList";
+import { ProductDetailsSlider } from "./slider";
 import cls from "./styles.module.scss";
 
 type PropsType = {

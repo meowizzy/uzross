@@ -23,6 +23,8 @@
     "news_section": {
       "title": "Новости",
       "anotherNews": "Другие новости"
-    }
+    },
+    "customers": "Клиенты",
+    "partners": "Партнеры"
   }
 }
