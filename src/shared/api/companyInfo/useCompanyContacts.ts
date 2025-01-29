@@ -5,6 +5,11 @@ import { useUnit } from "effector-react";
 
 type FilteredSocials = Record<SocialsType, CompanySocials>;
 
+type GroupedFilesType = Record<
+  "primary" | "secondary" | "tertiary" | "quaternary",
+  string
+>;
+
 export const useCompanyInfo = () => {
   const { data, loading, error } = useUnit($companyInfo.store);
   const phones = data?.phones;
@@ -14,6 +19,19 @@ export const useCompanyInfo = () => {
   const description = data?.description;
   const address = data?.address;
   const files = data?.files;
+  const chars = data?.characteristicDTOS;
+
+  const groupedFiles: GroupedFilesType = useMemo(() => {
+    const primary = files?.find((file) => file.main);
+    const other = files?.filter((file) => !file.main);
+
+    return {
+      primary: primary?.filePath,
+      secondary: other?.[0].filePath,
+      tertiary: other?.[1].filePath,
+      quaternary: other?.[2]?.filePath,
+    };
+  }, [files]);
 
   const filteredSocials: FilteredSocials = useMemo(() => {
     return socials?.reduce((acc, curr) => {
@@ -42,6 +60,8 @@ export const useCompanyInfo = () => {
     description,
     address,
     files,
+    chars,
     filteredSocials,
+    groupedFiles,
   };
 };

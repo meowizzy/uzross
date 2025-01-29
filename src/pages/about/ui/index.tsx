@@ -4,7 +4,7 @@ import { useCompanyInfo } from "@shared/api/companyInfo/useCompanyContacts";
 import { Content } from "@widgets/content";
 
 const About = () => {
-  const { name, description, loading, files, error } = useCompanyInfo();
+  const { name, description, loading, groupedFiles, error } = useCompanyInfo();
 
   if (error) {
     return null;
@@ -20,8 +20,7 @@ const About = () => {
           data={{
             title: name,
             description,
-            filePath:
-              files.length && files.find((file) => !file.main)?.filePath,
+            filePath: groupedFiles.tertiary,
           }}
         />
       )}

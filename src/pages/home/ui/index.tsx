@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { About } from "./about";
 import { Banner } from "./banner";
 import { CallbackSection } from "./callbackSection";
 import { News } from "./news";
@@ -8,6 +9,7 @@ const HomePage = () => {
   return (
     <>
       <Banner />
+      <About />
       {/*<Section title={"Biz haqimizda"} theme={"dark"}></Section>*/}
       {/*<Section></Section>*/}
       {/*<Section title={"Sertifikatlar va patentlar"} theme={"dark"}></Section>*/}
