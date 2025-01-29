@@ -1,5 +1,6 @@
 import { type RouteProps } from "react-router-dom";
 import AboutAsync from "../../../pages/about";
+import ContactsAsync from "../../../pages/contacts/ui/contacts.async";
 import HomePageAsync from "../../../pages/home";
 import NewsPageAsync from "../../../pages/news";
 import NewsDetailsAsync from "../../../pages/newsDetails";
@@ -45,7 +46,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.CONTACTS]: {
     path: RoutePaths.CONTACTS,
-    element: <HomePageAsync />,
+    element: <ContactsAsync />,
   },
   [AppRoutes.NEWS]: {
     path: RoutePaths.NEWS,

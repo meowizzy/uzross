@@ -9,6 +9,7 @@ type PropsType = {
   height?: string;
   loading?: boolean;
   error?: boolean;
+  className?: string;
 };
 
 export const Map = (props: PropsType) => {

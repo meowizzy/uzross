@@ -41,12 +41,20 @@ export interface CompanyEmails {
   primary: boolean;
 }
 
+export type SocialsType =
+  | "telegram"
+  | "instagram"
+  | "facebook"
+  | "linkedin"
+  | "whatsapp"
+  | "twitter";
+
 export interface CompanySocials {
   id: number;
   name: string;
   type: {
     id: number;
-    name: string;
+    name: SocialsType;
     code: string;
   };
   primary: boolean;

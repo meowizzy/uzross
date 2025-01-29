@@ -5,7 +5,7 @@ import cls from "./styles.module.scss";
 type PropsType = {
   title: string;
   className?: string;
-  size?: "md" | "lg" | "xl";
+  size?: "md" | "lg" | "xl" | "xxl";
 };
 
 export const Title = memo((props: PropsType) => {

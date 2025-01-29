@@ -1,2 +1,2 @@
 export { $companyInfo } from "./services";
-export { CompanyInfoModel } from "./model";
+export { CompanyInfoModel, SocialsType } from "./model";

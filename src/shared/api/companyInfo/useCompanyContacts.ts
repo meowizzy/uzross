@@ -1,6 +1,9 @@
 import { useMemo } from "react";
+import { CompanySocials, SocialsType } from "@shared/api/companyInfo/model";
 import { $companyInfo } from "@shared/api/companyInfo/services";
 import { useUnit } from "effector-react";
+
+type FilteredSocials = Record<SocialsType, CompanySocials>;
 
 export const useCompanyInfo = () => {
   const { data, loading, error } = useUnit($companyInfo.store);
@@ -11,6 +14,14 @@ export const useCompanyInfo = () => {
   const description = data?.description;
   const address = data?.address;
   const files = data?.files;
+
+  const filteredSocials: FilteredSocials = useMemo(() => {
+    return socials?.reduce((acc, curr) => {
+      acc[curr.type.name.toLowerCase() as SocialsType] = curr;
+
+      return acc;
+    }, {} as FilteredSocials);
+  }, [socials]);
 
   const links = useMemo(() => {
     if (!emails && !socials) {
@@ -24,10 +35,13 @@ export const useCompanyInfo = () => {
     name,
     links,
     phones,
+    socials,
+    emails,
     loading,
     error,
     description,
     address,
     files,
+    filteredSocials,
   };
 };

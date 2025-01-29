@@ -1,15 +1,15 @@
 .heading {
   font-size: 24px;
   font-weight: bold;
-  margin: 56px 0;
+  margin: 56px 0 56px;
 }
 
 .content {
   width: 100%;
-  padding-top: 56px;
   padding-bottom: 120px;
+  margin-top: 56px;
 }
 
 .contentInner {
-  visibility: visible;
+  margin: 56px 0 0;
 }
