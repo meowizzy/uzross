@@ -30,7 +30,6 @@ export const News = () => {
   useEffect(() => {
     if (isVisible && !fulfilled && !newsData.length) {
       $postsList.effect({
-        sortOrder: "asc",
         size: 5,
       });
     }

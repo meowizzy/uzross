@@ -1,0 +1,39 @@
+import { RefObject } from "react";
+import { Section } from "@ui/section";
+import { VendorProductFieldsItemModel } from "../../../model/types/vendorProductFields";
+import cls from "../styles.module.scss";
+
+type PropsType = {
+  data: Array<VendorProductFieldsItemModel>;
+  ref?: RefObject<HTMLDivElement>;
+};
+
+export const ProductFields = (props: PropsType) => {
+  const { data, ...restProps } = props;
+
+  return (
+    <div className={cls.fields} {...restProps}>
+      {data?.map((item) => (
+        <Section
+          className={cls.fieldsGroup}
+          key={item.id}
+          title={item.name}
+          size={"lg"}
+        >
+          <ul className={cls.fieldsList}>
+            {item.fields.map(({ field, value }) => (
+              <li className={cls.fieldRow} key={field.id}>
+                <div className={cls.fieldLabel}>
+                  <span>{field.name}</span>
+                </div>
+                <div className={cls.fieldValue}>
+                  <span>{value.value}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ))}
+    </div>
+  );
+};

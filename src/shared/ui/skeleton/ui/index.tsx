@@ -9,7 +9,7 @@ interface SkeletonProps {
   borderRadius?: string;
   theme?: "light" | "dark" | "darken";
 }
-export const Skeleton: FC<SkeletonProps> = (props) => {
+export const Skeleton = (props: SkeletonProps) => {
   const { className, width, height, borderRadius, theme = "light" } = props;
 
   const styles: CSSProperties = {

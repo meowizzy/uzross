@@ -6,3 +6,5 @@ export { $topProducts } from "./model/services/topProducts";
 export { ProductCard } from "./ui/productCard";
 export { ProductDetails } from "./ui/productDetails";
 export { ProductDetailsSkeleton } from "./ui/productDetails/productDetails.skeleton";
+export { ProductFields } from "./ui/productDetails/fields";
+export { FieldsSkeleton } from "./ui/productDetails/fields/fields.skeleton";

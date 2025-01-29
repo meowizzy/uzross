@@ -1,21 +1,22 @@
-import { memo } from "react";
+import { memo, ReactNode } from "react";
 import cn from "classnames";
 import cls from "./styles.module.scss";
 
 type PropsType = {
   title: string;
   className?: string;
+  size?: "md" | "lg" | "xl";
 };
 
 export const Title = memo((props: PropsType) => {
-  const { title, className } = props;
+  const { title, size = "xl", className } = props;
 
   if (!title) {
     return null;
   }
 
   return (
-    <div className={cn(cls.title, className)}>
+    <div className={cn(cls.title, cls[size], className)}>
       <span>{title}</span>
     </div>
   );

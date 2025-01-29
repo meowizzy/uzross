@@ -1,5 +1,6 @@
-import { VendorProductsListItemModel } from "@entities/product/model/types/vendorProductsList";
 import { HandlerType, httpGet } from "@shared/api";
+import { VendorProductFieldsItemModel } from "../types/vendorProductFields";
+import { VendorProductsListItemModel } from "../types/vendorProductsList";
 
 export const fetchVendorProductDetails: HandlerType<
   number,
@@ -7,5 +8,14 @@ export const fetchVendorProductDetails: HandlerType<
 > = (id) => {
   return httpGet({
     url: `/api/public/v1/product/${id}/details`,
+  });
+};
+
+export const fetchVendorProductFields: HandlerType<
+  number,
+  Array<VendorProductFieldsItemModel>
+> = (id) => {
+  return httpGet({
+    url: `/api/public/v1/product/${id}/field-details`,
   });
 };

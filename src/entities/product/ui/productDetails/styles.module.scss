@@ -1,7 +1,10 @@
 .productDetails {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   padding-top: 70px;
+}
+
+.productDetailsLeft, .productDetailsRight {
+  width: 50%;
 }
 
 .productDetailsLeft {
@@ -67,4 +70,96 @@
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+}
+
+.slider {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.swiperMain {
+  border-radius: var(--radius-lg);
+  background-color: var(--color-light-grey);
+}
+
+.swiperSlide, .swiperThumb {
+  cursor: pointer;
+}
+
+.sliderThumbs {
+  width: 92px;
+  margin-left: 16px;
+  max-height: 532px;
+
+  .swiperThumbs {
+    height: 100%;
+
+    .swiperThumb {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background-color: var(--color-light-grey);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.sliderMain {
+  width: calc(100% - 92px - 16px);
+
+  .swiperSlide {
+    height: 100%;
+    position: relative;
+    padding-top: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.fields {
+  .fieldsGroup {
+    visibility: visible;
+  }
+
+  .fieldsSkeletonTitle {
+    margin-bottom: 40px;
+  }
+
+  .fieldsSkeletonList {
+    row-gap: 30px;
+  }
+
+  .fieldsList, .fieldsSkeletonList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fieldRow {
+    font-size: 16px;
+    padding: 8px;
+    display: flex;
+    background-color: var(--color-light-grey);
+
+    &:nth-child(even) {
+      background-color: transparent;
+    }
+  }
+
+  .fieldLabel, .fieldValue {
+    width: 50%;
+  }
 }

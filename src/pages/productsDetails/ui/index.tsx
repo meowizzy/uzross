@@ -5,9 +5,11 @@ import {
   ProductDetails,
   ProductDetailsSkeleton,
 } from "@entities/product";
+import { $vendorProductFields } from "@entities/product/model/services/vendorProductDetails";
 import { Content } from "@widgets/content";
 import { useUnit } from "effector-react/effector-react.umd";
 import { useLocation, useParams } from "react-router-dom";
+import { ProductDetailsFields } from "./fields";
 
 const ProductsDetailsPage = () => {
   const { id } = useParams();
@@ -83,6 +85,7 @@ const ProductsDetailsPage = () => {
       }
     >
       {renderContent()}
+      {isVendor && <ProductDetailsFields id={Number(id)} />}
     </Content>
   );
 };

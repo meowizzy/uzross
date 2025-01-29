@@ -1,3 +1,4 @@
+import { ProductDetailsSlider } from "@entities/product/ui/productDetails/slider";
 import { Image } from "@ui/image";
 import { FilesType } from "../../model/types/vendorProductsList";
 import cls from "./styles.module.scss";
@@ -13,8 +14,7 @@ export const ProductDetails = (props: PropsType) => {
 
   const renderImages = () => {
     if (Array.isArray(images)) {
-      // should be slider
-      return null;
+      return <ProductDetailsSlider images={images} />;
     }
 
     return (
