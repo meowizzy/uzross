@@ -57,7 +57,7 @@ export interface CompanyInfoModel {
   name: string;
   description: string;
   address: CompanyAddress;
-  files: CompanyFiles;
+  files: Array<CompanyFiles>;
   characteristicDTOS: Array<CompanyCharacteristicDTOInfo>;
   phones: Array<CompanyPhones>;
   emails: Array<CompanyEmails>;

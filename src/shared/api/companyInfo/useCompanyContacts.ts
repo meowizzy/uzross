@@ -5,6 +5,7 @@ import { useUnit } from "effector-react";
 export const useCompanyInfo = () => {
   const { data, loading, error } = useUnit($companyInfo.store);
   const phones = data?.phones;
+  const name = data?.name;
   const emails = data?.emails;
   const socials = data?.socialAddresses;
   const description = data?.description;
@@ -20,6 +21,7 @@ export const useCompanyInfo = () => {
   }, [emails, socials]);
 
   return {
+    name,
     links,
     phones,
     loading,

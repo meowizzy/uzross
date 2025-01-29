@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { PageLoader } from "@app/appLayout/ui/pageLoader";
 import { routeConfig } from "@shared/config/routes";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigation } from "react-router-dom";
 import TopBarProgress from "react-topbar-progress-indicator";
 
 export const AppRouter = () => {
@@ -25,8 +25,8 @@ export const AppRouter = () => {
     barColors: {
       "0": "#24aadb",
     },
-    shadowBlur: 10,
-    barThickness: 5,
+    shadowBlur: 0,
+    barThickness: 3,
   });
 
   return (

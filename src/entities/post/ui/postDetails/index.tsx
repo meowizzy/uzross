@@ -6,12 +6,18 @@ import { Image } from "@ui/image";
 import cls from "./styles.module.scss";
 
 type PropsType = {
-  data: PostsListItemModel;
+  data: Partial<
+    Pick<
+      PostsListItemModel,
+      "title" | "filePath" | "createdDate" | "description"
+    >
+  >;
+  titlePosition?: "left" | "center" | "right";
   className?: string;
 };
 
 export const PostDetails = (props: PropsType) => {
-  const { data, className } = props;
+  const { data, className, titlePosition = "left" } = props;
   const classesCompose = cn(cls.postDetails, className);
 
   return (
@@ -25,7 +31,11 @@ export const PostDetails = (props: PropsType) => {
             {dayjs(data.createdDate).format("MMMM DD, YYYY")}
           </time>
         )}
-        {!!data.title && <h1 className={cls.postDetailsTitle}>{data.title}</h1>}
+        {!!data.title && (
+          <h1 className={cn(cls.postDetailsTitle, cls[titlePosition])}>
+            {data.title}
+          </h1>
+        )}
         {!!data.description && (
           <div className={cls.postDetailsDescription}>{data.description}</div>
         )}

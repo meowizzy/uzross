@@ -46,6 +46,18 @@
   font-size: 40px;
   margin-bottom: 24px;
   line-height: 48px;
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.center {
+    text-align: center;
+  }
 }
 
 .postDetailsDescription {
