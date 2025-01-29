@@ -11,7 +11,7 @@ import cls from "./styles.module.scss";
 
 export const CustomersPartnersSection = memo(() => {
   const { t } = useTranslation("home");
-  const [interSectionRef, isVisible] = useIntersection();
+  const [intersectionRef, isVisible] = useIntersection();
 
   const {
     data: customersData,
@@ -76,7 +76,7 @@ export const CustomersPartnersSection = memo(() => {
   };
 
   return (
-    <Section ref={interSectionRef}>
+    <Section ref={intersectionRef}>
       <Tabs
         trigger={isVisible}
         onChange={onChangeTab}
