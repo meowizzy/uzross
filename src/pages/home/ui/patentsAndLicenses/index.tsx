@@ -1,6 +1,9 @@
 import { memo, useEffect } from "react";
 import { $licenseList } from "@entities/license";
-import { LicenseListItemModel } from "@entities/license/model/types/licenseList";
+import {
+  LicenseFilesItemModel,
+  LicenseListItemModel,
+} from "@entities/license/model/types/licenseList";
 import { ProductCard } from "@entities/product";
 import { ProductCardSkeleton } from "@entities/product/ui/productCard/productCard.skeleton";
 import { Carousel } from "@widgets/carousel/ui";
@@ -16,7 +19,7 @@ export const PatentsAndLicenses = memo(() => {
   const { data, loading, error } = useUnit($licenseList.store);
 
   useEffect(() => {
-    if (isVisible && !data.content.length && !data.content.length) {
+    if (isVisible && !data) {
       $licenseList.effect({});
     }
   }, [isVisible]);
@@ -28,18 +31,17 @@ export const PatentsAndLicenses = memo(() => {
       ref={intersectionRef}
     >
       <Carousel
-        slides={data.content}
         loading={loading}
+        slides={data?.length ? data : []}
         items={4}
-        render={(item: LicenseListItemModel) => {
+        render={(item: LicenseFilesItemModel) => {
           if (loading) {
             return <ProductCardSkeleton theme={"dark"} />;
           }
 
           return (
             <ProductCard
-              title={item?.title}
-              imagePath={item?.files[0]?.filePath}
+              imagePath={item.filePath}
               className={cls.licenseCard}
             />
           );

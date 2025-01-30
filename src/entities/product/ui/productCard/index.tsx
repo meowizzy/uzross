@@ -6,7 +6,7 @@ import cls from "./styles.module.scss";
 
 type PropsType = {
   imagePath: string;
-  title: string;
+  title?: string;
   path?: string;
   className?: string;
 };
@@ -25,9 +25,11 @@ export const ProductCard = memo((props: PropsType) => {
           <Image src={imagePath} alt={title} />
         )}
       </div>
-      <div className={cls.productName}>
-        {!!path ? <Link to={path}>{title}</Link> : <span>{title}</span>}
-      </div>
+      {!!title && (
+        <div className={cls.productName}>
+          {!!path ? <Link to={path}>{title}</Link> : <span>{title}</span>}
+        </div>
+      )}
     </div>
   );
 });

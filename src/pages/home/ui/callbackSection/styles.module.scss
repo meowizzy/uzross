@@ -95,6 +95,11 @@
   margin-top: 18px;
 }
 
+.callbackFormError {
+  color: var(--color-danger);
+  margin-bottom: 15px;
+}
+
 .successDialog {
   display: flex;
   flex-direction: column;

@@ -28,7 +28,6 @@
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
-    "@types/react-input-mask": "^3.0.2",
     "@types/webpack": "^5.28.5",
     "@types/webpack-dev-server": "^4.7.2",
     "babel-loader": "^9.2.1",
@@ -60,6 +59,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
+    "@react-input/mask": "^2.0.4",
     "axios": "^1.7.9",
     "classnames": "^2.5.1",
     "core-js": "^3.39.0",
@@ -74,7 +74,6 @@
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.0",
-    "react-input-mask": "^2.0.4",
     "react-router-dom": "^7.1.1",
     "react-topbar-progress-indicator": "^4.1.1",
     "swiper": "^11.2.1"

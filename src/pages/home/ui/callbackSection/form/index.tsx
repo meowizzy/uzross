@@ -1,5 +1,6 @@
 import { FormEventHandler, memo, useEffect } from "react";
 import { $callbackForm } from "@features/callback";
+import { useMask } from "@react-input/mask";
 import { useUnit } from "effector-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@ui/button";
@@ -12,6 +13,10 @@ import cls from "../styles.module.scss";
 export const CallbackForm = memo(() => {
   const { t } = useTranslation("home");
   const { success, loading, error } = useUnit($callbackForm.store);
+  const inputRef = useMask({
+    mask: "+998 (__) ___-__-__",
+    replacement: { _: /\d/ },
+  });
 
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -24,7 +29,7 @@ export const CallbackForm = memo(() => {
 
     $callbackForm.effect({
       name,
-      phone,
+      phone: phone.replace(/[^\d+]/g, ""),
       email,
       message,
     });
@@ -38,9 +43,9 @@ export const CallbackForm = memo(() => {
         </div>
         <Title
           size={"xl"}
-          title={
-            "Заявка успешно отправлена. Мы свяжемся с Вами в ближайшее время."
-          }
+          title={t(
+            "notifications.applicationHasBeenSuccessfullySentWeWillContactYouShortly",
+          )}
         />
       </div>
     );
@@ -53,6 +58,7 @@ export const CallbackForm = memo(() => {
         size={"lg"}
         className={cls.callbackFormTitle}
       />
+      {!!error && <div className={cls.callbackFormError}>{error.message}</div>}
       <form onSubmit={onSubmitForm}>
         <div className={cls.formField}>
           <Input
@@ -68,6 +74,7 @@ export const CallbackForm = memo(() => {
             name={"phone"}
             required
             wrapperClassName={cls.callbackFormInput}
+            ref={inputRef}
           />
         </div>
         <div className={cls.formField}>

@@ -35,5 +35,8 @@
     "message": "Murojaat matni",
     "send": "Jo’natish",
     "sendMessage": "Xabar jo’natish"
+  },
+  "notifications": {
+    "applicationHasBeenSuccessfullySentWeWillContactYouShortly": "lova muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz."
   }
 }

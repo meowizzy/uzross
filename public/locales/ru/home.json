@@ -35,5 +35,8 @@
     "message": "Сообщение",
     "send": "Отправить",
     "sendMessage": "Оставить заявку"
+  },
+  "notifications": {
+    "applicationHasBeenSuccessfullySentWeWillContactYouShortly": "Заявка успешно отправлена. Мы свяжемся с Вами в ближайшее время."
   }
 }

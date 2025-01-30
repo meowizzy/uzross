@@ -35,5 +35,8 @@
     "message": "Message",
     "send": "Send",
     "sendMessage": "Send a message"
+  },
+  "notifications": {
+    "applicationHasBeenSuccessfullySentWeWillContactYouShortly": "The application has been successfully sent. We will contact you shortly."
   }
 }
