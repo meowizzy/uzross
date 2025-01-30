@@ -17,7 +17,6 @@ export const ProductDetailsSlider = memo((props: PropsType) => {
     <div className={cls.slider}>
       <div className={cls.sliderMain}>
         <Swiper
-          navigation={true}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs]}
           className={cls.swiperMain}

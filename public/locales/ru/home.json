@@ -18,6 +18,7 @@
     "callback": "Свяжитесь с нами",
     "services": "Услуги",
     "products": "Наша продукция",
+    "vendorProducts": "Прочая продукция",
     "certificates": "Сертификаты и патенты",
     "about": "О нас",
     "news_section": {
@@ -26,5 +27,13 @@
     },
     "customers": "Клиенты",
     "partners": "Партнеры"
+  },
+  "fields": {
+    "name": "Ваше имя",
+    "phone": "Номер телефона",
+    "email": "Email",
+    "message": "Сообщение",
+    "send": "Отправить",
+    "sendMessage": "Оставить заявку"
   }
 }

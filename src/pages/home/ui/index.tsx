@@ -4,6 +4,8 @@ import { Banner } from "./banner";
 import { CallbackSection } from "./callbackSection";
 import { CustomersPartnersSection } from "./customersPartners";
 import { News } from "./news";
+import { PatentsAndLicenses } from "./patentsAndLicenses";
+import { Products } from "./products";
 import { Services } from "./services";
 
 const HomePage = () => {
@@ -12,10 +14,8 @@ const HomePage = () => {
       <Banner />
       <About />
       <CustomersPartnersSection />
-      {/*<Section title={"Biz haqimizda"} theme={"dark"}></Section>*/}
-      {/*<Section></Section>*/}
-      {/*<Section title={"Sertifikatlar va patentlar"} theme={"dark"}></Section>*/}
-      {/*<Section title={"Mahsulotlarimiz"}></Section>*/}
+      <PatentsAndLicenses />
+      <Products />
       <Services />
       <News />
       <CallbackSection />

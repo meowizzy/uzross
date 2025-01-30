@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Section } from "@ui/section";
 import PhoneIcon from "@assets/svg/phone.svg";
 import { CallbackSkeleton } from "./callback.skeleton";
+import { CallbackForm } from "./form";
 import cls from "./styles.module.scss";
 
 export const CallbackSection = () => {
@@ -50,7 +51,9 @@ export const CallbackSection = () => {
     <Section title={t("sections.callback")} theme={"dark"}>
       <div className={cls.wrapper}>
         <div className={cls.left}>{renderContent()}</div>
-        <div className={cls.right}></div>
+        <div className={cls.right}>
+          <CallbackForm />
+        </div>
       </div>
     </Section>
   );

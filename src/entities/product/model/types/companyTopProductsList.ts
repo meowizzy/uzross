@@ -1,8 +1,8 @@
 import { PaginationListParams } from "@shared/types/paginationListParams";
 
-export interface TopProductsListParams extends PaginationListParams {}
+export interface CompanyTopProductsListParams extends PaginationListParams {}
 
-export interface TopProductsListItemModel {
+export interface CompanyTopProductsListItemModel {
   id: number;
   title: string;
   description: string;

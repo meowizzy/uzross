@@ -18,6 +18,7 @@
     "callback": "Call with us",
     "services": "Services",
     "products": "Our products",
+    "vendorProducts": "Another products",
     "certificates": "Certificates and patents",
     "about": "About us",
     "news_section": {
@@ -26,5 +27,13 @@
     },
     "customers": "Customers",
     "partners": "Partners"
+  },
+  "fields": {
+    "name": "Your name",
+    "phone": "Phone number",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sendMessage": "Send a message"
   }
 }

@@ -72,3 +72,49 @@
   visibility: visible;
 }
 
+.callbackForm {
+  visibility: visible;
+  max-width: 524px;
+  width: 100%
+}
+
+.callbackFormInput {
+  width: 100%;
+  max-width: unset !important;
+}
+
+.callbackFormTitle {
+  margin-bottom: 24px;
+}
+
+.formField {
+  margin-bottom: 8px;
+}
+
+.callbackFormSubmit {
+  margin-top: 18px;
+}
+
+.successDialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .successIcon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

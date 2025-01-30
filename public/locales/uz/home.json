@@ -18,6 +18,7 @@
     "callback": "Biz bilan bog’laning",
     "services": "Xizmatlar",
     "products": "Mahsulotlarimiz",
+    "vendorProducts": "Xitoy mahsulotlari",
     "certificates": "Sertifikatlar va patentlar",
     "about": "Biz haqimizda",
     "news_section": {
@@ -26,5 +27,13 @@
     },
     "customers": "Mijozlarimiz",
     "partners": "Hamkorlarimiz"
+  },
+  "fields": {
+    "name": "Ism sharifingiz",
+    "phone": "Telefon raqamingiz",
+    "email": "Email",
+    "message": "Murojaat matni",
+    "send": "Jo’natish",
+    "sendMessage": "Xabar jo’natish"
   }
 }

@@ -1,0 +1,13 @@
+.licenseCard {
+  & :global(.cardImage) {
+    padding-top: 130.9%;
+    border-width: 18px 16px 18px 16px;
+    border-color: var(--color-border);
+    background-color: var(--color-border);
+    border-style: solid;
+
+    img {
+      border-radius: var(--radius-md);
+    }
+  }
+}

@@ -4,6 +4,7 @@ import cls from "./styles.module.scss";
 
 type PropsType = Omit<ComponentProps<"input">, "prefix"> & {
   className?: string;
+  wrapperClassName?: string;
   fullWidth?: boolean;
   value?: string;
   label?: string;
@@ -27,6 +28,7 @@ export const Input = memo((props: PropsType) => {
     suffix,
     fullWidth = false,
     className,
+    wrapperClassName,
     ...restProps
   } = props;
 
@@ -41,7 +43,7 @@ export const Input = memo((props: PropsType) => {
     },
   );
 
-  const inputWrapperClassesCompose = cn(cls.inputWrapper, {
+  const inputWrapperClassesCompose = cn(cls.inputWrapper, wrapperClassName, {
     [cls.fullWidth]: fullWidth,
   });
 
