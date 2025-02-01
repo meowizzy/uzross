@@ -1,4 +1,5 @@
 import { FileModel } from "@entities/product/model/types/vendorProductDetails";
+import { useTranslation } from "react-i18next";
 import { Image } from "@ui/image";
 import { Title } from "@ui/title";
 import { Tooltip } from "@ui/tooltip";
@@ -16,6 +17,7 @@ type PropsType = {
 
 export const ProductDetails = (props: PropsType) => {
   const { title, description, images, brand, operatingSystem } = props;
+  const { t } = useTranslation("productDetails");
 
   const renderImages = () => {
     if (Array.isArray(images)) {
@@ -42,7 +44,7 @@ export const ProductDetails = (props: PropsType) => {
           {!!brand && (
             <div className={cls.option}>
               <Title size={"sm"} className={cls.optionLabel} bold>
-                Бренд:
+                {t("fields.brand")}:
               </Title>
               <div className={cls.optionValue}>
                 <Tooltip title={brand.name}>
@@ -54,7 +56,7 @@ export const ProductDetails = (props: PropsType) => {
           {!!operatingSystem && (
             <div className={cls.option}>
               <Title size={"sm"} className={cls.optionLabel} bold>
-                Операционные системы:
+                {t("fields.operationSystems")}:
               </Title>
               <div className={cls.optionValue}>
                 {operatingSystem.map((op, idx) => {
