@@ -1,6 +1,5 @@
-import { CSSProperties, memo, ReactNode, useEffect, useRef } from "react";
+import { CSSProperties, memo, ReactNode, useRef } from "react";
 import cn from "classnames";
-import { data } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Button } from "@ui/button";

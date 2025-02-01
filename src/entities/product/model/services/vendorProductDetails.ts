@@ -1,3 +1,4 @@
+import { VendorProductDetails } from "@entities/product/model/types/vendorProductDetails";
 import { createXHRStore } from "@shared/effector";
 import { XHRDataStoreState } from "@shared/effector/constructors";
 import {
@@ -5,11 +6,10 @@ import {
   fetchVendorProductFields,
 } from "../api/fetchVendorProductDetail";
 import { VendorProductFieldsItemModel } from "../types/vendorProductFields";
-import { VendorProductsListItemModel } from "../types/vendorProductsList";
 
 export const $vendorProductDetails = createXHRStore(
   fetchVendorProductDetails,
-  new XHRDataStoreState<VendorProductsListItemModel | null>(null),
+  new XHRDataStoreState<VendorProductDetails | null>(null),
 );
 
 export const $vendorProductFields = createXHRStore(

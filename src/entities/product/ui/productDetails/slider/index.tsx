@@ -1,4 +1,4 @@
-import { memo, useRef, useState } from "react";
+import { memo, useMemo, useRef, useState } from "react";
 import { Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperRef } from "swiper/swiper-react";
@@ -20,6 +20,13 @@ export const ProductDetailsSlider = memo((props: PropsType) => {
   const navigationNextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<SwiperRef>(null);
 
+  const filteredImages = useMemo(() => {
+    const mainImage = images?.find((image) => image.main);
+    const filtered = images?.filter((image) => !image.main);
+
+    return [mainImage, ...filtered];
+  }, [images]);
+
   const onClickNextSlide = () => {
     if (!swiperRef.current) return;
     swiperRef.current.swiper.slideNext();
@@ -40,7 +47,7 @@ export const ProductDetailsSlider = memo((props: PropsType) => {
           ref={swiperRef}
           loop
         >
-          {images.map((img) => (
+          {filteredImages.map((img) => (
             <SwiperSlide key={img.id} className={cls.swiperSlide}>
               <Image src={img.filePath} />
             </SwiperSlide>

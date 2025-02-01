@@ -224,3 +224,28 @@
     width: 50%;
   }
 }
+
+.additionalInfo {
+  margin-top: 30px;
+
+  .option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    row-gap: 5px;
+  }
+
+  .optionLabel {
+    margin-right: 10px;
+  }
+
+  .optionValue {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .optionValues {
+    margin-right: 5px;
+  }
+}

@@ -63,6 +63,8 @@ const ProductsDetailsPage = () => {
           title={vendorProductDetailsData?.name}
           description={vendorProductDetailsData?.description}
           images={vendorProductDetailsData?.files}
+          brand={vendorProductDetailsData?.brand}
+          operatingSystem={vendorProductDetailsData?.operatingSystems}
         />
       );
     }
