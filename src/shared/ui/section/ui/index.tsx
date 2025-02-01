@@ -10,6 +10,7 @@ type PropsType = {
   children?: ReactNode;
   className?: string;
   theme?: "light" | "dark";
+  paddings?: boolean;
 } & ComponentProps<"section">;
 
 export const Section = memo((props: PropsType) => {
@@ -19,16 +20,21 @@ export const Section = memo((props: PropsType) => {
     theme = "light",
     className,
     size = "xl",
-    titleSize = "xl",
+    titleSize = "lg",
+    paddings = true,
     ...restProps
   } = props;
-  const classesCompose = cn(cls.section, className, cls[theme], cls[size]);
+  const classesCompose = cn(cls.section, className, cls[theme], cls[size], {
+    [cls.paddings]: paddings,
+  });
 
   return (
     <section className={classesCompose} {...restProps}>
       <div className={"container"}>
         {!!title && (
-          <Title className={cls.title} title={title} size={titleSize} />
+          <Title className={cls.title} size={titleSize} bold>
+            {title}
+          </Title>
         )}
         {children}
       </div>

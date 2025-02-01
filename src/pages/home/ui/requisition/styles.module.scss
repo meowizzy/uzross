@@ -1,10 +1,20 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @media all and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .left {
-  padding-right: 50px;
+  @media all and (min-width: 641px) {
+    padding-right: 50px;
+  }
+
+  @media all and (max-width: 640px) {
+    margin-bottom: 30px;
+  }
 }
 
 .phones, .phonesIcon {
@@ -24,10 +34,19 @@
     svg {
       max-width: 59px;
     }
+
+    @media all and (max-width: 768px) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   .skeletonPhonesIcon, .phonesIcon {
     margin-right: 32px;
+
+    @media all and (max-width: 768px) {
+      margin-right: 20px;
+    }
   }
 
   .skeletonPhonesList, .phonesList {
@@ -41,6 +60,14 @@
     a {
       font-size: 40px;
       font-weight: 700;
+
+      @media all and (max-width: 1280px) {
+        font-size: 30px;
+      }
+
+      @media all and (max-width: 768px) {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -51,6 +78,10 @@
   align-items: flex-start;
   row-gap: 8px;
   margin-top: 48px;
+
+  @media all and (max-width: 640px) {
+    margin-top: 30px;
+  }
 
   .linksRow {
     display: flex;
@@ -74,8 +105,11 @@
 
 .callbackForm {
   visibility: visible;
-  max-width: 524px;
-  width: 100%
+  width: 100%;
+
+  @media all and (min-width: 641px) {
+    max-width: 524px;
+  }
 }
 
 .callbackFormInput {

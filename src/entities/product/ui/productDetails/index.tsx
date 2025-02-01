@@ -1,4 +1,5 @@
 import { Image } from "@ui/image";
+import { Title } from "@ui/title";
 import { FilesType } from "../../model/types/vendorProductsList";
 import { ProductDetailsSlider } from "./slider";
 import cls from "./styles.module.scss";
@@ -27,7 +28,9 @@ export const ProductDetails = (props: PropsType) => {
   return (
     <div className={cls.productDetails}>
       <div className={cls.productDetailsLeft}>
-        <h1 className={cls.productDetailsTitle}>{title}</h1>
+        <Title size={"xl"} bold>
+          {title}
+        </Title>
         {!!description && (
           <p className={cls.productDetailsDescription}>{description}</p>
         )}

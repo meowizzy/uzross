@@ -19,10 +19,6 @@ export const navigationList: Record<string, NavigationListItemModel> = {
     path: RoutePaths.PRODUCTS,
     name: "menuList.products",
   },
-  [RoutePaths.SERVICES]: {
-    path: RoutePaths.SERVICES,
-    name: "menuList.services",
-  },
   [RoutePaths.NEWS]: {
     path: RoutePaths.NEWS,
     name: "menuList.news",

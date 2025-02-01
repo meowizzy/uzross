@@ -1,11 +1,11 @@
 import { memo, useEffect, useState } from "react";
-import { $postsList, PostCard, PostCardSkeleton } from "@entities/post";
+import { $postsList, PostCard } from "@entities/post";
+import { CardSkeleton } from "@widgets/card";
 import { Content } from "@widgets/content";
 import { PaginationList } from "@widgets/paginationList";
-import dayjs from "dayjs";
 import { useUnit } from "effector-react";
 import { useTranslation } from "react-i18next";
-import { useSkeleton } from "@ui/skeleton";
+import { Skeleton, useSkeleton } from "@ui/skeleton";
 
 const NewsPage = () => {
   const { t } = useTranslation();
@@ -24,6 +24,8 @@ const NewsPage = () => {
     $postsList.effect({ size: 6, page: page - 1 });
   }, [page]);
 
+  const onChangePagination = (page: number) => setPage(page);
+
   const renderChildren = () => {
     const gap = 32;
 
@@ -32,7 +34,15 @@ const NewsPage = () => {
         <PaginationList
           data={skeletonItems}
           gap={gap}
-          render={() => <PostCardSkeleton />}
+          render={() => (
+            <CardSkeleton>
+              <Skeleton
+                width="150px"
+                height="var(--height-sm)"
+                borderRadius="250px"
+              />
+            </CardSkeleton>
+          )}
         />
       );
     }
@@ -44,7 +54,7 @@ const NewsPage = () => {
         render={(post) => <PostCard data={post} />}
         pagination={{
           page,
-          onChange: (page) => setPage(page),
+          onChange: onChangePagination,
           total: totalPages,
         }}
       />

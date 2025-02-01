@@ -15,7 +15,7 @@
     }
   },
   "sections": {
-    "callback": "Call with us",
+    "requisition": "Call with us",
     "services": "Services",
     "products": "Our products",
     "vendorProducts": "Another products",

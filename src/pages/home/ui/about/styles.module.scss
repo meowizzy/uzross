@@ -1,6 +1,12 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @media all and (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
 }
 
 .left {
@@ -36,6 +42,10 @@
     color: rgba(31, 34, 36, 1);
     margin-bottom: 40px;
 
+    @media all and (max-width: 768px) {
+      margin-bottom: 25px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -68,12 +78,25 @@
 .right {
   padding-left: 124px;
 
+  @media all and (max-width: 1280px) {
+    padding-left: 56px;
+  }
+
+  @media all and (max-width: 768px) {
+    padding-left: 0;
+    margin-bottom: 30px;
+  }
+
   .pic {
     position: relative;
     padding-top: 76%;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background-color: var(--color-dark-grey);
+
+    @media all and (max-width: 768px) {
+      padding-top: 55%;
+    }
 
     img, svg, .skeletonPic {
       position: absolute;

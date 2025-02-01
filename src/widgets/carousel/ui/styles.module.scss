@@ -2,6 +2,15 @@
   display: grid;
   grid-template-columns: repeat(var(--items), 1fr);
   column-gap: var(--gap);
+
+  @media all and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media all and (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 }
 
 .carousel {
@@ -12,9 +21,18 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  position: absolute;
-  top: -70px;
-  right: 0;
+
+  @media all and (min-width: 769px) {
+    position: absolute;
+    top: -70px;
+    right: 0;
+  }
+
+  @media all and (max-width: 768px) {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
   .prev, .next {
     width: 48px;
     height: 48px;
@@ -34,7 +52,14 @@
 
   &.light {
     .prev, .next {
-      &:hover, &:disabled {
+      @media all and (min-width: 769px) {
+        &:hover {
+          color: var(--color-grey-muted);
+          background-color: var(--color-white);
+        }
+      }
+
+      &:disabled {
         color: var(--color-grey-muted);
         background-color: var(--color-white);
       }
@@ -43,7 +68,14 @@
 
   &.dark {
     .prev, .next {
-      &:hover, &:disabled {
+      @media all and (min-width: 769px) {
+        &:hover {
+          color: var(--color-grey-muted);
+          background-color: var(--color-light-grey);
+        }
+      }
+
+      &:disabled {
         color: var(--color-grey-muted);
         background-color: var(--color-light-grey);
       }

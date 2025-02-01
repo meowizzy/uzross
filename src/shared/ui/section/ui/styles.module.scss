@@ -1,4 +1,15 @@
 .section {
+
+  & > :global(.container) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.paddings > :global(.container) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   &.md {
     & > :global(.container) {
       padding-top: 30px;
@@ -25,10 +36,19 @@
     & > :global(.container) {
       padding-top: 120px;
       padding-bottom: 120px;
+
+      @media all and (max-width: 1280px) {
+        padding-top: 56px;
+        padding-bottom: 56px;
+      }
     }
 
     .title {
       margin-bottom: 56px;
+
+      @media all and (max-width: 1280px) {
+        margin-bottom: 30px;
+      }
     }
   }
 }

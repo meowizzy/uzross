@@ -15,7 +15,7 @@
     }
   },
   "sections": {
-    "callback": "Biz bilan bog’laning",
+    "requisition": "Biz bilan bog’laning",
     "services": "Xizmatlar",
     "products": "Mahsulotlarimiz",
     "vendorProducts": "Xitoy mahsulotlari",

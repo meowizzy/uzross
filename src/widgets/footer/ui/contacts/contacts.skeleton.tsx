@@ -6,8 +6,9 @@ export const ContactsSkeleton = () => {
 
   return (
     <div className={cls.contactsList}>
-      {skeletonItems.map((item) => (
+      {skeletonItems.map((_, index) => (
         <Skeleton
+          key={index}
           width={"300px"}
           theme={"darken"}
           height={"24px"}

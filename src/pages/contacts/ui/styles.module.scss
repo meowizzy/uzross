@@ -19,6 +19,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+
+  @media all and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media all and (max-width: 639px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contactsItem {
@@ -27,9 +35,11 @@
   border-radius: var(--radius-md);
   min-height: 140px;
 
-  &:nth-child(5) {
-    grid-column-start: 2;
-    grid-column-end: 4;
+  @media all and (min-width: 769px) {
+    &:nth-child(5) {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
   }
 }
 

@@ -16,7 +16,7 @@
   display: flex;
 
   &:hover {
-    @media all and (min-width: 1025px) {
+    @media all and (min-width: 1281px) {
       animation-play-state: paused;
     }
   }
@@ -44,7 +44,11 @@
     animation: scroll var(--duration) linear infinite;
   }
 
-  @media all and (max-width: 639px) {
+  @media all and (max-width: 768px) {
+    width: calc(var(--container-max-width) / 4 * var(--items));
+  }
+
+  @media all and (max-width: 480px) {
     width: calc(var(--container-max-width) / 3 * var(--items));
   }
 }
@@ -55,8 +59,12 @@
   margin: 0 37px;
   text-align: center;
 
-  @media all and (max-width: 639px) {
+  @media all and (max-width: 768px) {
     margin: 0 18.5px;
+    width: calc(var(--container-max-width) / 4 - 37px);
+  }
+
+  @media all and (max-width: 480px) {
     width: calc(var(--container-max-width) / 3 - 37px);
   }
 

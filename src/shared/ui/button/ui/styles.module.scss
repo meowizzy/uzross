@@ -1,5 +1,5 @@
 .button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
   font-size: 16px;
@@ -18,7 +18,7 @@
     transition: var(--transition);
   }
 
-  &:disabled {
+  &.disabled, &:disabled {
     &:after {
       content: "";
       position: absolute;
@@ -36,6 +36,7 @@
   padding: var(--button-padding-vertical-sm) var(--button-padding-horizontal-sm);
   height: var(--button-height-sm);
   border-radius: var(--radius-xl);
+  font-size: 14px;
   &.onlyIcon {
     padding: var(--button-padding-vertical-sm);
     width: var(--button-height-sm);
@@ -59,6 +60,12 @@
   &.onlyIcon {
     padding: var(--button-padding-vertical-sm);
     width: var(--button-height-lg);
+  }
+
+  @media all and (max-width: 480px) {
+    padding: var(--button-padding-vertical-md) var(--button-padding-horizontal-md);
+    height: var(--button-height-md);
+    font-size: 14px;
   }
 }
 

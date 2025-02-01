@@ -1,25 +1,43 @@
 .newsWrapper {
   display: flex;
   align-items: flex-start;
-}
 
-.left, .right {
-  flex-grow: 1;
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .left {
-  max-width: 632px;
   width: 100%;
+
+  @media all and (min-width: 769px) {
+    max-width: 632px;
+  }
 }
 
 .right {
   padding-left: 124px;
   align-items: flex-start;
+  flex-grow: 1;
+
+  @media all and (max-width: 1280px) {
+    padding-left: 56px;
+  }
+
+  @media all and (max-width: 768px) {
+    padding-left: 0;
+    margin-top: 30px;
+    width: 100%;
+  }
 
   .rightTitle {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 32px;
+
+    @media all and (max-width: 768px) {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -43,6 +61,7 @@
 
 .newsList {
   margin-bottom: 32px;
+  width: 100%;
 }
 
 .newsPic {

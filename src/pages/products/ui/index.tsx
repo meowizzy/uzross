@@ -1,10 +1,7 @@
 import { memo } from "react";
-import {
-  $companyProductsList,
-  $vendorProductsList,
-  ProductCard,
-} from "@entities/product";
+import { $companyProductsList, $vendorProductsList } from "@entities/product";
 import { RoutePaths } from "@shared/config/routes";
+import { Card } from "@widgets/card";
 import { Content } from "@widgets/content";
 import { useTranslation } from "react-i18next";
 import { Tabs, TabsDataType } from "@ui/tabs";
@@ -22,9 +19,10 @@ const tabsItems: Array<TabsDataType> = [
         }}
         render={(product) => {
           return (
-            <ProductCard
+            <Card
               title={product.title}
               imagePath={product.filePath}
+              imageHeight={"md"}
               path={RoutePaths.PRODUCTS_DETAILS + product.id}
             />
           );
@@ -43,7 +41,8 @@ const tabsItems: Array<TabsDataType> = [
         }}
         render={(product) => {
           return (
-            <ProductCard
+            <Card
+              imageHeight={"md"}
               title={product.name}
               imagePath={product?.files[0]?.filePath}
               path={RoutePaths.PRODUCTS_DETAILS_VENDOR + product.id}

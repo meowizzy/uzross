@@ -13,6 +13,7 @@
   transition: grid-template-rows var(--transition), opacity var(--transition);
   will-change: grid-template-rows;
   opacity: 0.5;
+  color: var(--color-white);
 }
 
 .navigation {
@@ -34,18 +35,27 @@
 
 .navigationButton {
   font-weight: 700;
-  padding-left: 32px;
+  @media all and (min-width: 769px) {
+    padding-left: 32px;
+  }
 }
 
 .navigationButtonIcon {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
   display: flex;
   align-items: center;
+  width: 18px;
+  height: 18px;
+  @media all and (min-width: 769px) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  @media all and (max-width: 768px) {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
 
   span, span::before, span::after {
     background-color: var(--color-grey);

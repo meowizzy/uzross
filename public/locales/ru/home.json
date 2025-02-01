@@ -15,7 +15,7 @@
     }
   },
   "sections": {
-    "callback": "Свяжитесь с нами",
+    "requisition": "Свяжитесь с нами",
     "services": "Услуги",
     "products": "Наша продукция",
     "vendorProducts": "Прочая продукция",

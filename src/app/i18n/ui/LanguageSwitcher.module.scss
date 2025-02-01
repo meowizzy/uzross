@@ -17,6 +17,12 @@ $openerHeight: 24px;
   pointer-events: none;
   transition: opacity var(--transition), transform var(--transition);
   overflow: hidden;
+
+  @media all and (max-width: 768px) {
+    left: auto;
+    right: 0;
+  }
+
 }
 
 .langSwitcherOpener {

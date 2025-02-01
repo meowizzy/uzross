@@ -1,9 +1,9 @@
 import { ReactNode, useEffect, useState } from "react";
-import { ProductCardSkeleton } from "@entities/product/ui/productCard/productCard.skeleton";
 import { HandlerType } from "@shared/api";
 import { XHRDataStoreState } from "@shared/effector/constructors";
 import { PaginationListModel } from "@shared/effector/models";
 import { CreateStoreReturnType } from "@shared/effector/types/store";
+import { CardSkeleton } from "@widgets/card";
 import { PaginationList } from "@widgets/paginationList";
 import { useUnit } from "effector-react";
 import { useSkeleton } from "@ui/skeleton";
@@ -47,7 +47,7 @@ export const ProductsList = <P = unknown, R = unknown>(
         data={skeletonItems}
         items={4}
         gap={16}
-        render={() => <ProductCardSkeleton />}
+        render={() => <CardSkeleton imageHeight={"md"} />}
       />
     );
   }

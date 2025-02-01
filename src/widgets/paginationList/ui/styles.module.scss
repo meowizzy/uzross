@@ -7,12 +7,12 @@
     gap: 20px;
   }
 
-  @media all and (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media all and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @media all and (max-width: 640px) {
-    grid-template-columns: 1fr;
+  @media all and (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -22,4 +22,8 @@
 
 .pagination {
   margin: 80px 0 0;
+
+  @media all and (max-width: 768px) {
+    margin: 56px 0 0;
+  }
 }

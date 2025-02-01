@@ -1,20 +1,51 @@
 .title {
-  font-weight: bold;
-  line-height: 28.8px;
 
-  &.md {
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.sm {
     font-size: 16px;
   }
 
-  &.lg {
+  &.md {
     font-size: 18px;
   }
 
-  &.xl {
+  &.lg {
     font-size: 24px;
+
+    @media all and (max-width: 768px) {
+      font-size: 22px;
+    }
+
+    @media all and (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  &.xl {
+    font-size: 40px;
+
+    @media all and (max-width: 768px) {
+      font-size: 30px;
+    }
   }
 
   &.xxl {
-    font-size: 40px;
+    font-size: 76.8px;
+    line-height: normal;
+
+    @media all and (max-width: 1280px) {
+      font-size: 60px;
+    }
+
+    @media all and (max-width: 768px) {
+      font-size: 40px;
+    }
+
+    @media all and (max-width: 480px) {
+      font-size: 30px;
+    }
   }
 }

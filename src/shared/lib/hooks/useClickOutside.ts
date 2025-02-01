@@ -12,7 +12,7 @@ export const useClickOutside = <
   const buttonRef = useRef<S>(null);
 
   useEffect(() => {
-    if (!ref) return;
+    if (!ref.current) return;
 
     const handleClick = (event: MouseEvent) => {
       if (

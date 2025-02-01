@@ -4,7 +4,6 @@ export { $vendorProductsList } from "./model/services/vendorProductsList";
 export { $vendorProductDetails } from "./model/services/vendorProductDetails";
 export { $companyTopProducts } from "./model/services/companyTopProducts";
 export { $vendorTopProducts } from "./model/services/vendorTopProducts";
-export { ProductCard } from "./ui/productCard";
 export { ProductDetails } from "./ui/productDetails";
 export { ProductDetailsSkeleton } from "./ui/productDetails/productDetails.skeleton";
 export { ProductFields } from "./ui/productDetails/fields";

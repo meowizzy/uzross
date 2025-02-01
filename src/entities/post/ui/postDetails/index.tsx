@@ -3,6 +3,7 @@ import { PostsListItemModel } from "@entities/post";
 import cn from "classnames";
 import dayjs from "dayjs";
 import { Image } from "@ui/image";
+import { Title } from "@ui/title";
 import cls from "./styles.module.scss";
 
 type PropsType = {
@@ -32,9 +33,14 @@ export const PostDetails = (props: PropsType) => {
           </time>
         )}
         {!!data.title && (
-          <h1 className={cn(cls.postDetailsTitle, cls[titlePosition])}>
+          <Title
+            size={"xl"}
+            className={cn(cls.postDetailsTitle, cls[titlePosition])}
+            bold
+            pageTitle
+          >
             {data.title}
-          </h1>
+          </Title>
         )}
         {!!data.description && (
           <div className={cls.postDetailsDescription}>{data.description}</div>

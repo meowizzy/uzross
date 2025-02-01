@@ -1,6 +1,12 @@
 .productDetails {
   display: flex;
   padding-top: 70px;
+
+  @media all and (max-width: 480px) {
+    padding-top: 0;
+    flex-direction: column-reverse;
+    row-gap: 30px;
+  }
 }
 
 .productDetailsLeft, .productDetailsRight {
@@ -9,11 +15,24 @@
 
 .productDetailsLeft {
   padding-right: 50px;
+
+  @media all and (max-width: 768px) {
+    width: 40%;
+  }
+
+  @media all and (max-width: 480px) {
+    width: 100%;
+  }
 }
 
-.productDetailsTitle {
-  font-size: 40px;
-  font-weight: 700;
+.productDetailsRight {
+  @media all and (max-width: 768px) {
+    width: 60%;
+  }
+
+  @media all and (max-width: 480px) {
+    width: 100%;
+  }
 }
 
 .productDetailsDescription {
@@ -76,15 +95,29 @@
   display: flex;
   align-items: stretch;
   width: 100%;
+
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .swiperMain {
   border-radius: var(--radius-lg);
   background-color: var(--color-light-grey);
+
+  @media all and (max-width: 768px) {
+    margin-bottom: 16px;
+  }
 }
 
 .swiperSlide, .swiperThumb {
   cursor: pointer;
+}
+
+.prev, .next {
+  @media all and (min-width: 769px) {
+    display: none;
+  }
 }
 
 .sliderThumbs {
@@ -92,13 +125,28 @@
   margin-left: 16px;
   max-height: 532px;
 
+  @media all and (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+  }
+
   .swiperThumbs {
     height: 100%;
+
+    @media all and (max-width: 768px) {
+      max-width: calc(100% - 68px);
+    }
 
     .swiperThumb {
       border-radius: var(--radius-lg);
       overflow: hidden;
       background-color: var(--color-light-grey);
+
+      &:global(.swiper-slide-thumb-active) {
+        border: 3px solid var(--color-primary);
+      }
     }
 
     img {
@@ -110,7 +158,9 @@
 }
 
 .sliderMain {
-  width: calc(100% - 92px - 16px);
+  @media all and (min-width: 769px) {
+    width: calc(100% - 92px - 16px);
+  }
 
   .swiperSlide {
     height: 100%;
@@ -133,6 +183,11 @@
 .fields {
   .fieldsGroup {
     visibility: visible;
+
+    & > :global(.container) {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
   }
 
   .fieldsSkeletonTitle {
@@ -154,11 +209,17 @@
     display: flex;
     background-color: var(--color-light-grey);
 
+    @media all and (max-width: 640px) {
+      font-size: 14px;
+    }
+
     &:nth-child(even) {
       background-color: transparent;
     }
   }
-
+  .fieldLabel {
+    padding-right: 5px;
+  }
   .fieldLabel, .fieldValue {
     width: 50%;
   }

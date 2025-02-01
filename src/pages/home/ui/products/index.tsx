@@ -1,21 +1,17 @@
 import React, { useMemo } from "react";
+import { $companyTopProducts, $vendorTopProducts } from "@entities/product";
 import {
-  $companyTopProducts,
-  $vendorTopProducts,
-  ProductCard,
+  VendorTopProductsItemModel,
+  CompanyTopProductsListItemModel,
 } from "@entities/product";
-import { CompanyTopProductsListItemModel } from "@entities/product/model/types/companyTopProductsList";
-import { VendorProductsListItemModel } from "@entities/product/model/types/vendorProductsList";
-import { ProductCardSkeleton } from "@entities/product/ui/productCard/productCard.skeleton";
 import { RoutePaths } from "@shared/config/routes";
+import { Card, CardSkeleton } from "@widgets/card";
 import { Carousel } from "@widgets/carousel/ui";
 import { useUnit } from "effector-react";
-import error from "eslint-plugin-react/lib/util/error";
 import { useTranslation } from "react-i18next";
 import { useIntersection } from "@hooks/useIntersection";
 import { Section } from "@ui/section";
 import { Tabs, TabsDataType } from "@ui/tabs";
-import products from "../../../products";
 
 export const Products = () => {
   const { t } = useTranslation("home");
@@ -50,13 +46,14 @@ export const Products = () => {
             theme={"dark"}
             render={(slide: CompanyTopProductsListItemModel) => {
               if (companyTopProductsLoading) {
-                return <ProductCardSkeleton />;
+                return <CardSkeleton imageHeight={"md"} />;
               }
 
               return (
-                <ProductCard
+                <Card
                   path={RoutePaths.PRODUCTS_DETAILS + slide?.id}
                   title={slide?.title}
+                  imageHeight={"md"}
                   imagePath={slide?.filePath}
                 />
               );
@@ -72,14 +69,15 @@ export const Products = () => {
             slides={vendorTopProductsItems}
             loading={vendorTopProductsLoading}
             theme={"dark"}
-            render={(slide: VendorProductsListItemModel) => {
+            render={(slide: VendorTopProductsItemModel) => {
               if (vendorTopProductsLoading) {
-                return <ProductCardSkeleton />;
+                return <CardSkeleton imageHeight={"md"} />;
               }
 
               return (
-                <ProductCard
+                <Card
                   path={RoutePaths.PRODUCTS_DETAILS_VENDOR + slide?.id}
+                  imageHeight={"md"}
                   title={slide?.name}
                   imagePath={slide?.files.find((file) => file.main).filePath}
                 />

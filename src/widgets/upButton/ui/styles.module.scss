@@ -1,0 +1,15 @@
+.footerButtonUp {
+  color: var(--color-primary);
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+  transition: opacity var(--transition);
+  opacity: 0;
+  pointer-events: none;
+
+  &.visible {
+    pointer-events: all;
+    opacity: 1;
+  }
+}

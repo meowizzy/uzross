@@ -1,11 +1,7 @@
 import { memo, useEffect } from "react";
 import { $licenseList } from "@entities/license";
-import {
-  LicenseFilesItemModel,
-  LicenseListItemModel,
-} from "@entities/license/model/types/licenseList";
-import { ProductCard } from "@entities/product";
-import { ProductCardSkeleton } from "@entities/product/ui/productCard/productCard.skeleton";
+import { LicenseFilesItemModel } from "@entities/license/model/types/licenseList";
+import { Card, CardSkeleton } from "@widgets/card";
 import { Carousel } from "@widgets/carousel/ui";
 import { useUnit } from "effector-react";
 import { useTranslation } from "react-i18next";
@@ -36,13 +32,14 @@ export const PatentsAndLicenses = memo(() => {
         items={4}
         render={(item: LicenseFilesItemModel) => {
           if (loading) {
-            return <ProductCardSkeleton theme={"dark"} />;
+            return <CardSkeleton onlyImage theme={"dark"} imageHeight={"lg"} />;
           }
 
           return (
-            <ProductCard
+            <Card
               imagePath={item.filePath}
               className={cls.licenseCard}
+              imageHeight={"lg"}
             />
           );
         }}

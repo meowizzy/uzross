@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+
+  @media all and (max-width: 640px) {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .contactsListRow {

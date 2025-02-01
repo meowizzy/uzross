@@ -1,7 +1,7 @@
 import { Skeleton, useSkeleton } from "@ui/skeleton";
 import cls from "./styles.module.scss";
 
-export const CallbackSkeleton = () => {
+export const RequisitionSkeleton = () => {
   const skeletonItems = useSkeleton(2);
 
   return (

@@ -4,17 +4,17 @@ import { getValidLink } from "@shared/lib/helpers/getValidLink";
 import { useTranslation } from "react-i18next";
 import { Section } from "@ui/section";
 import PhoneIcon from "@assets/svg/phone.svg";
-import { CallbackSkeleton } from "./callback.skeleton";
-import { CallbackForm } from "./form";
+import { RequisitionForm } from "./form";
+import { RequisitionSkeleton } from "./requisition.skeleton";
 import cls from "./styles.module.scss";
 
-export const CallbackSection = () => {
+export const Requisition = () => {
   const { t } = useTranslation("home");
   const { loading, phones, links } = useCompanyInfo();
 
   const renderContent = () => {
     if (loading) {
-      return <CallbackSkeleton />;
+      return <RequisitionSkeleton />;
     }
 
     return (
@@ -48,11 +48,11 @@ export const CallbackSection = () => {
   };
 
   return (
-    <Section title={t("sections.callback")} theme={"dark"}>
+    <Section title={t("sections.requisition")} theme={"dark"}>
       <div className={cls.wrapper}>
         <div className={cls.left}>{renderContent()}</div>
         <div className={cls.right}>
-          <CallbackForm />
+          <RequisitionForm />
         </div>
       </div>
     </Section>

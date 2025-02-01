@@ -1,11 +1,11 @@
 import { memo } from "react";
 import { About } from "./about";
 import { Banner } from "./banner";
-import { CallbackSection } from "./callbackSection";
 import { CustomersPartnersSection } from "./customersPartners";
 import { News } from "./news";
 import { PatentsAndLicenses } from "./patentsAndLicenses";
 import { Products } from "./products";
+import { Requisition } from "./requisition";
 import { Services } from "./services";
 
 const HomePage = () => {
@@ -18,7 +18,7 @@ const HomePage = () => {
       <Products />
       <Services />
       <News />
-      <CallbackSection />
+      <Requisition />
     </>
   );
 };

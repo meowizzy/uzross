@@ -3,11 +3,16 @@
   color: var(--color-border);
 
   & :global(.container) {
-   padding: 80px 0 48px;
+    padding-top: 80px;
+    padding-bottom: 40px;
     background-image: url("@assets/images/footerBg.png");
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center bottom;
+
+    @media all and (max-width: 768px) {
+      padding-top: 56px;
+    }
   }
 }
 
@@ -17,11 +22,29 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 66px;
-  column-gap: 30px;
+  gap: 40px;
+
+  @media all and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media all and (max-width: 640px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 30px;
+  }
 }
 
 .footerTopLeft {
   max-width: 307px;
+
+  @media all and (max-width: 640px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .footerBot {
@@ -31,11 +54,11 @@
   justify-content: space-between;
 }
 
-.footerButtonUp {
-  color: var(--color-primary);
-}
-
 .footerBotCopyright {
   color: var(--color-grey);
   font-size: 12px;
+
+  @media all and (max-width: 640px) {
+    text-align: center;
+  }
 }

@@ -1,5 +1,6 @@
 import { memo, ReactNode } from "react";
 import { BreadCrumbs } from "@widgets/content/ui/breadCrumbs";
+import { Title } from "@ui/title";
 import cls from "./styles.module.scss";
 
 type PropsType = {
@@ -15,7 +16,11 @@ export const Content = memo((props: PropsType) => {
     <div className={cls.content}>
       <div className={"container"}>
         <BreadCrumbs dynamicCrumb={crumb} />
-        {!!title && <h1 className={cls.heading}>{title}</h1>}
+        {!!title && (
+          <Title className={cls.heading} size={"md"} pageTitle bold>
+            {title}
+          </Title>
+        )}
         {!!children && <div className={cls.contentInner}>{children}</div>}
       </div>
     </div>

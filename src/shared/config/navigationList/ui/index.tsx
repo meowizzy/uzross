@@ -8,21 +8,17 @@ type PropsType = {
   className?: string;
   listClassName?: string;
   direction?: "horizontal" | "vertical";
-  home?: boolean;
+  theme?: "light" | "dark";
 };
 
 export const NavigationList = (props: PropsType) => {
-  const {
-    className,
-    direction = "horizontal",
-    listClassName,
-    home = true,
-  } = props;
+  const { className, direction = "horizontal", listClassName, theme } = props;
   const { t } = useTranslation();
   const classesCompose = cn(cls.navigation, className);
   const listClassesCompose = cn(
     cls.navigationList,
     cls[direction],
+    cls[theme],
     listClassName,
   );
 

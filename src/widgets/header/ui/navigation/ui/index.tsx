@@ -16,13 +16,12 @@ export const Navigation = () => {
     setVisible,
   );
 
-  const toggle = () => {
+  const onClickOpenNavigationList = () => {
     setVisible((prev) => !prev);
   };
 
   useEffect(() => {
     if (visible) {
-      console.log(123131);
       setVisible(false);
     }
   }, [location]);
@@ -40,7 +39,7 @@ export const Navigation = () => {
           </div>
         }
         theme={"clear"}
-        onClick={toggle}
+        onClick={onClickOpenNavigationList}
       >
         {t("labels.menu")}
       </Button>

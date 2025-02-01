@@ -1,4 +1,4 @@
-import { FormEventHandler, memo, useEffect } from "react";
+import { FormEventHandler, memo } from "react";
 import { $callbackForm } from "@features/callback";
 import { useMask } from "@react-input/mask";
 import { useUnit } from "effector-react";
@@ -10,12 +10,13 @@ import { Title } from "@ui/title";
 import SuccessIcon from "@assets/svg/success.svg";
 import cls from "../styles.module.scss";
 
-export const CallbackForm = memo(() => {
+export const RequisitionForm = memo(() => {
   const { t } = useTranslation("home");
   const { success, loading, error } = useUnit($callbackForm.store);
   const inputRef = useMask({
     mask: "+998 (__) ___-__-__",
     replacement: { _: /\d/ },
+    showMask: true,
   });
 
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
@@ -41,23 +42,20 @@ export const CallbackForm = memo(() => {
         <div className={cls.successIcon}>
           <SuccessIcon />
         </div>
-        <Title
-          size={"xl"}
-          title={t(
+        <Title size={"lg"} bold>
+          {t(
             "notifications.applicationHasBeenSuccessfullySentWeWillContactYouShortly",
           )}
-        />
+        </Title>
       </div>
     );
   }
 
   return (
     <div className={cls.callbackForm}>
-      <Title
-        title={t("fields.sendMessage")}
-        size={"lg"}
-        className={cls.callbackFormTitle}
-      />
+      <Title size={"md"} className={cls.callbackFormTitle} bold>
+        {t("fields.sendMessage")}
+      </Title>
       {!!error && <div className={cls.callbackFormError}>{error.message}</div>}
       <form onSubmit={onSubmitForm}>
         <div className={cls.formField}>

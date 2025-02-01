@@ -1,0 +1,78 @@
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  --padding-top-sm: 72.1%;
+  --padding-top-md: 111.1%;
+  --padding-top-lg: 130.9%;
+}
+
+.cardImage {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-light-grey);
+  width: 100%;
+
+  &.sm {
+    padding-top: var(--padding-top-sm);
+  }
+
+  &.md {
+    padding-top: var(--padding-top-md);
+  }
+
+  &.lg {
+    padding-top: var(--padding-top-lg);
+  }
+
+  img, svg, div {
+    position: absolute;
+  }
+
+  img, div {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform var(--transition);
+  }
+
+  &.withZoom {
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.cardName {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 24px;
+
+  @media all and (max-width: 480px) {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}
+
+.cardBottom {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: flex-start;
+}
+
+.skeletonName {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}

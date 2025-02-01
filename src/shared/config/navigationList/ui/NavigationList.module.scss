@@ -12,7 +12,7 @@
 
   & > :global(a) {
     text-decoration: none;
-    color: var(--color-white);
+    color: inherit;
     font-size: 14px;
     font-weight: 700;
   }

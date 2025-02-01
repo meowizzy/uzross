@@ -64,15 +64,24 @@ export const Carousel = memo(<T = unknown,>(props: PropsType<T>) => {
         className={className}
         modules={[Navigation]}
         loop={true}
-        autoplay={{
-          stopOnLastSlide: false,
-        }}
         navigation={{
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
         }}
-        spaceBetween={gap}
-        slidesPerView={items}
+        breakpoints={{
+          0: {
+            spaceBetween: 10,
+            slidesPerView: 2,
+          },
+          481: {
+            spaceBetween: gap,
+            slidesPerView: 3,
+          },
+          769: {
+            spaceBetween: gap,
+            slidesPerView: items,
+          },
+        }}
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>{render(slide, idx)}</SwiperSlide>

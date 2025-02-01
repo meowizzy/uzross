@@ -4,22 +4,13 @@ import { Contacts } from "@widgets/footer/ui/contacts";
 import { Description } from "@widgets/footer/ui/description";
 import { Map } from "@widgets/map";
 import { useTranslation } from "react-i18next";
-import { Button } from "@ui/button";
 import { Logo } from "@ui/logo";
-import ArrowUpIcon from "@assets/svg/arrowUp.svg";
 import cls from "./Footer.module.scss";
 
 export const Footer = () => {
   const { loading, phones, links, address, error, description } =
     useCompanyInfo();
   const { t } = useTranslation();
-
-  const onClickScrollUp = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <footer className={cls.footer}>
@@ -47,17 +38,8 @@ export const Footer = () => {
             error={!!error}
           />
         </div>
-        <div className={cls.footerBot}>
-          <div className={cls.footerBotCopyright}>
-            <span>© 2025 {`${t("siteName")}. ${t("copyrightText")}`}</span>
-          </div>
-          <Button
-            size={"lg"}
-            icon={<ArrowUpIcon />}
-            theme={"secondary"}
-            className={cls.footerButtonUp}
-            onClick={onClickScrollUp}
-          />
+        <div className={cls.footerBotCopyright}>
+          <span>© 2025 {`${t("siteName")}. ${t("copyrightText")}`}</span>
         </div>
       </div>
     </footer>

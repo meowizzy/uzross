@@ -15,4 +15,8 @@
   flex-direction: column;
   row-gap: 5px;
   margin-top: 32px;
+
+  @media all and (max-width: 640px) {
+    align-items: center;
+  }
 }
