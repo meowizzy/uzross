@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo } from "react";
+import React, { memo, useEffect, useMemo } from "react";
 import {
   $companyProductDetails,
   $vendorProductDetails,
@@ -8,6 +8,8 @@ import {
 import { $vendorProductFields } from "@entities/product/model/services/vendorProductDetails";
 import { Content } from "@widgets/content";
 import { useUnit } from "effector-react/effector-react.umd";
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import { useLocation, useParams } from "react-router-dom";
 import { ProductDetailsFields } from "./fields";
 
@@ -17,6 +19,7 @@ const ProductsDetailsPage = () => {
   const isVendor = useMemo(() => {
     return location.pathname.split("/").includes("vendor");
   }, [location.pathname]);
+  const { t } = useTranslation();
 
   const {
     data: companyProductDetailsData,
@@ -79,16 +82,21 @@ const ProductsDetailsPage = () => {
   };
 
   return (
-    <Content
-      crumb={
-        isVendor
-          ? vendorProductDetailsData?.name
-          : companyProductDetailsData?.title
-      }
-    >
-      {renderContent()}
-      {isVendor && <ProductDetailsFields id={Number(id)} />}
-    </Content>
+    <>
+      <Helmet
+        title={`${isVendor ? vendorProductDetailsData?.name : companyProductDetailsData?.title} | UzRoss`}
+      />
+      <Content
+        crumb={
+          isVendor
+            ? vendorProductDetailsData?.name
+            : companyProductDetailsData?.title
+        }
+      >
+        {renderContent()}
+        {isVendor && <ProductDetailsFields id={Number(id)} />}
+      </Content>
+    </>
   );
 };
 

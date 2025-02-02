@@ -81,7 +81,7 @@ export const ProductDetailsSlider = memo((props: PropsType) => {
             },
           }}
         >
-          {images.map((img) => (
+          {filteredImages.map((img) => (
             <SwiperSlide key={img.id} className={cls.swiperThumb}>
               <Image src={img.filePath} />
             </SwiperSlide>

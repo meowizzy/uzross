@@ -4,6 +4,7 @@ import { CardSkeleton } from "@widgets/card";
 import { Content } from "@widgets/content";
 import { PaginationList } from "@widgets/paginationList";
 import { useUnit } from "effector-react";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { Skeleton, useSkeleton } from "@ui/skeleton";
 
@@ -61,7 +62,12 @@ const NewsPage = () => {
     );
   };
 
-  return <Content title={t("menuList.news")}>{renderChildren()}</Content>;
+  return (
+    <>
+      <Helmet title={`${t("menuList.news")} | UzRoss`} />
+      <Content title={t("menuList.news")}>{renderChildren()}</Content>
+    </>
+  );
 };
 
 export default memo(NewsPage);

@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import { $companyInfo } from "@shared/api/companyInfo";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { useClickOutside } from "@hooks/useClickOutside";

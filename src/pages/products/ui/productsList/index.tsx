@@ -27,18 +27,16 @@ export const ProductsList = <P = unknown, R = unknown>(
   const [page, setPage] = useState(number || 1);
 
   useEffect(() => {
-    // if (!productsData.length || number !== page - 1) {
-    //
-    // }
-
-    $store.effect(
-      params
-        ? {
-            ...params,
-            page: page - 1,
-          }
-        : {},
-    );
+    if (!productsData.length || number !== page - 1) {
+      $store.effect(
+        params
+          ? {
+              ...params,
+              page: page - 1,
+            }
+          : {},
+      );
+    }
   }, [page, $store]);
 
   if (loading) {
