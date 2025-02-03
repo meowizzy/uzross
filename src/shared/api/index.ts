@@ -13,7 +13,7 @@ httpClient.interceptors.request.use((config) => {
   };
 
   config.headers = Object.assign(config.headers, {
-    "Accept-Language": localStorage.getItem("i18nextLng") || E_LANGUAGES.uz,
+    language: localStorage.getItem("i18nextLng") || E_LANGUAGES.uz,
   });
 
   return config;

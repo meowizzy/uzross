@@ -8,7 +8,7 @@ import { webpackPlugins } from "./webpackConfig/webpackPlugins";
 import { webpackResolvers } from "./webpackConfig/webpackResolvers";
 
 export default (env: TWebpackEnv): WebpackConfiguration => {
-  const port = env.port || 3001;
+  const port = env.port || 3002;
   const mode = env.mode || "development";
   const isDev = mode === "development";
 
