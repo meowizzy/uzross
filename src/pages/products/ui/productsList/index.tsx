@@ -43,7 +43,9 @@ export const ProductsList = <P = unknown, R = unknown>(
     return (
       <PaginationList
         data={skeletonItems}
-        items={4}
+        columnsInRow={{
+          lg: 4,
+        }}
         gap={16}
         render={() => <CardSkeleton imageHeight={"md"} />}
       />
@@ -53,7 +55,9 @@ export const ProductsList = <P = unknown, R = unknown>(
   return (
     <PaginationList
       data={productsData}
-      items={4}
+      columnsInRow={{
+        lg: 4,
+      }}
       gap={16}
       render={render}
       pagination={{

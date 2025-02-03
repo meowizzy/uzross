@@ -11,7 +11,7 @@ export const Numbers = ({ t }: { t: TFunction<"home"> }) => {
             <CountUp
               end={Number(t("banner.number_first.title"))}
               separator={" "}
-              duration={5}
+              duration={2}
               redraw={false}
             />{" "}
             +

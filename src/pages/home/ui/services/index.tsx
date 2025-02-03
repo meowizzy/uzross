@@ -30,7 +30,11 @@ export const Services = () => {
         <PaginationList
           data={skeletonItems}
           gap={16}
-          items={2}
+          columnsInRow={{
+            sm: 1,
+            md: 2,
+            lg: 2,
+          }}
           render={(_, idx) => <ServiceCardSkeleton key={idx} />}
         />
       );
@@ -40,7 +44,11 @@ export const Services = () => {
       <PaginationList
         data={servicesData}
         gap={16}
-        items={2}
+        columnsInRow={{
+          sm: 1,
+          md: 2,
+          lg: 2,
+        }}
         render={(service) => (
           <ServiceCard
             title={service.title}

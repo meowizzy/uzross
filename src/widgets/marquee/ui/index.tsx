@@ -1,5 +1,6 @@
 import { CSSProperties, memo } from "react";
 import cn from "classnames";
+import { useDeviceDetect } from "@hooks/useDeviceDetect";
 import { Skeleton, useSkeleton } from "@ui/skeleton";
 import cls from "./styles.module.scss";
 
@@ -12,7 +13,8 @@ type PropsType = {
 };
 
 export const Marquee = memo((props: PropsType) => {
-  const { items, count, loading, className, duration = 30 } = props;
+  const { items, count, loading, className, duration = 15 } = props;
+  const { isMobile } = useDeviceDetect();
   const skeletonItems = useSkeleton(5);
   const classesCompose = cn(cls.wrap, className);
 
@@ -33,7 +35,7 @@ export const Marquee = memo((props: PropsType) => {
   const styles = {
     "--items": items.length,
     "--count": count,
-    "--duration": `${duration}s`,
+    "--duration": `${(duration * 10) / count}s`,
   } as CSSProperties;
 
   const isValidCount = items.length >= count;
@@ -51,7 +53,7 @@ export const Marquee = memo((props: PropsType) => {
             </div>
           ))}
         </div>
-        {isValidCount && (
+        {(isValidCount || isMobile) && items.length > 2 && (
           <div className={marqueeClassesCompose} aria-hidden>
             {items.map((path) => (
               <div className={cls.item} key={path}>

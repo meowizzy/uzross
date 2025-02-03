@@ -45,6 +45,7 @@
   }
 
   @media all and (max-width: 768px) {
+    animation: scroll var(--duration) linear infinite;
     width: calc(var(--container-max-width) / 4 * var(--items));
   }
 
@@ -58,6 +59,12 @@
   flex-shrink: 0;
   margin: 0 37px;
   text-align: center;
+  transition: filter var(--transition);
+  filter: grayscale(1);
+
+  &:hover {
+    filter: grayscale(0);
+  }
 
   @media all and (max-width: 768px) {
     margin: 0 18.5px;

@@ -1,3 +1,4 @@
+import { useCompanyInfo } from "@shared/api/companyInfo/useCompanyContacts";
 import { RoutePaths } from "@shared/config/routes";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +13,7 @@ export const Banner = () => {
   const navigate = useNavigate();
   const { t } = useTranslation("translation");
   const { t: tHome } = useTranslation("home");
+  const { groupedFiles } = useCompanyInfo();
 
   return (
     <div className={cls.banner}>
@@ -37,7 +39,10 @@ export const Banner = () => {
           </div>
         </div>
         <div className={cls.bannerBottomWrap}>
-          <div className={cls.bannerBottom}>
+          <div
+            className={cls.bannerBottom}
+            style={{ backgroundImage: `url(${groupedFiles?.primary})` }}
+          >
             <div className={cls.bannerAnimatedCircle}>
               <Code className={cls.bannerAnimatedCircleCode} />
               <BannerCircleIcon />

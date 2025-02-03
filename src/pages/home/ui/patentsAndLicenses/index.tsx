@@ -36,11 +36,13 @@ export const PatentsAndLicenses = memo(() => {
           }
 
           return (
-            <Card
-              imagePath={item.filePath}
-              className={cls.licenseCard}
-              imageHeight={"lg"}
-            />
+            <div className={cls.card}>
+              <Card
+                imagePath={item.filePath}
+                className={cls.licenseCard}
+                imageHeight={"lg"}
+              />
+            </div>
           );
         }}
       />

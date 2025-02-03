@@ -35,6 +35,9 @@ const NewsPage = () => {
         <PaginationList
           data={skeletonItems}
           gap={gap}
+          columnsInRow={{
+            sm: 1,
+          }}
           render={() => (
             <CardSkeleton>
               <Skeleton
@@ -52,6 +55,9 @@ const NewsPage = () => {
       <PaginationList
         data={companyPostsData}
         gap={gap}
+        columnsInRow={{
+          sm: 1,
+        }}
         render={(post) => <PostCard data={post} />}
         pagination={{
           page,
