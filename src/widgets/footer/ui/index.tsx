@@ -8,7 +8,7 @@ import { Logo } from "@ui/logo";
 import cls from "./Footer.module.scss";
 
 export const Footer = () => {
-  const { loading, phones, links, address, error, description } =
+  const { loading, phones, socials, emails, address, error, description } =
     useCompanyInfo();
   const { t } = useTranslation();
 
@@ -28,7 +28,8 @@ export const Footer = () => {
           <Contacts
             loading={loading}
             error={error}
-            links={links}
+            emails={emails}
+            socials={socials}
             phones={phones}
           />
           <Map

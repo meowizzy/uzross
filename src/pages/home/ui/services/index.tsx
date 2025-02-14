@@ -61,7 +61,7 @@ export const Services = () => {
     );
   };
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 

@@ -58,7 +58,7 @@ export const About = () => {
     );
   };
 
-  if (error) {
+  if (error || (!description && !groupedFiles && !chars)) {
     return null;
   }
 

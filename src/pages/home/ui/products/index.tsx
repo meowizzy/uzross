@@ -30,7 +30,10 @@ export const Products = () => {
   const { content: vendorTopProductsItems } = vendorTopProductsData;
   const { content: companyTopProductsItems } = companyTopProductsData;
 
-  if (companyTopProductsError && vendorTopProductsError) {
+  if (
+    (companyTopProductsError && vendorTopProductsError) ||
+    (!companyTopProductsData && !vendorTopProductsData)
+  ) {
     return null;
   }
 

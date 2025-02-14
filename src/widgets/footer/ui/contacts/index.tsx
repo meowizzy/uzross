@@ -1,23 +1,23 @@
-import { CompanyEmails, CompanyPhones } from "@shared/api/companyInfo/model";
+import { SocialDTOModel } from "@shared/api/companyInfo/model";
 import { ErrorResponseModel } from "@shared/effector/models";
 import { formatPhoneNumber } from "@shared/lib/helpers/formatPhoneNumber";
-import { getValidLink } from "@shared/lib/helpers/getValidLink";
-import AddressIcon from "@assets/svg/address.svg";
+import { getSocialIconByCode } from "@shared/lib/helpers/getSocialIconByCode";
+import { ContactsType } from "@shared/types/common";
 import EmailIcon from "@assets/svg/email.svg";
 import PhoneIcon from "@assets/svg/phoneSecondary.svg";
-import TelegramIcon from "@assets/svg/telegram.svg";
 import { ContactsSkeleton } from "./contacts.skeleton";
 import cls from "./styles.module.scss";
 
 type PropsType = {
   loading: boolean;
-  phones: Array<CompanyPhones>;
-  links: Array<CompanyEmails>;
+  phones: Array<ContactsType>;
+  socials: Array<SocialDTOModel>;
+  emails: Array<ContactsType>;
   error: ErrorResponseModel;
 };
 
 export const Contacts = (props: PropsType) => {
-  const { loading, phones, links, error } = props;
+  const { loading, phones, socials, emails, error } = props;
 
   const renderContent = () => {
     if (loading) return <ContactsSkeleton />;
@@ -42,28 +42,24 @@ export const Contacts = (props: PropsType) => {
                 );
               })}
           </div>
-          {!!links?.length &&
-            links.map((link) => {
-              let icon;
-
-              switch (link.type.name) {
-                case "Telegram":
-                  icon = <TelegramIcon />;
-                  break;
-                case "Address":
-                  icon = <AddressIcon />;
-                  break;
-                default:
-                  icon = <EmailIcon />;
-              }
-
-              return (
-                <div className={cls.contactsListRow} key={link.id}>
-                  {icon}
-                  <a href={getValidLink(link)}>{link.name}</a>
-                </div>
-              );
-            })}
+          {!!emails?.length &&
+            emails.map((email) => (
+              <div className={cls.contactsListRow} key={email.id}>
+                <EmailIcon />
+                <a href={`mailto:${email.type.name}`} target="_blank">
+                  {email.name}
+                </a>
+              </div>
+            ))}
+          {!!socials?.length &&
+            socials.map((social) => (
+              <div className={cls.contactsListRow} key={social.id}>
+                {getSocialIconByCode(social.socialType.code)}
+                <a href={social.socialLink} target="_blank">
+                  {social.socialType.name}
+                </a>
+              </div>
+            ))}
         </div>
       </>
     );

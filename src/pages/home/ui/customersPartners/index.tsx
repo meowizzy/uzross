@@ -27,7 +27,7 @@ export const CustomersPartnersSection = memo(() => {
   const { content: customersItems } = customersData;
   const { content: partnersItems } = partnersData;
 
-  if (partnersError && customersError) {
+  if ((partnersError && customersError) || (!partnersData && !customersData)) {
     return null;
   }
 

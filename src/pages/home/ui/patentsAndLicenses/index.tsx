@@ -20,6 +20,10 @@ export const PatentsAndLicenses = memo(() => {
     }
   }, [isVisible]);
 
+  if (error || !data) {
+    return null;
+  }
+
   return (
     <Section
       title={t("sections.certificates")}

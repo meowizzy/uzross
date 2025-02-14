@@ -1,3 +1,5 @@
+import { ContactsType, NameCodeType } from "@shared/types/common";
+
 export interface CompanyAddress {
   landmark: string;
   street: string;
@@ -20,44 +22,23 @@ export interface CompanyCharacteristicDTOInfo {
   subTitle: string;
 }
 
-export interface CompanyPhones {
-  id: number;
-  name: string;
-  type: {
-    id: number;
-    name: string;
-    code: string;
-  };
-}
+export type SocialsType = "Telegram" | "Facebook" | "Instagram" | "Twitter";
 
-export interface CompanyEmails {
-  id: number;
-  name: string;
-  type: {
-    id: number;
-    name: string;
-    code: string;
-  };
-  primary: boolean;
-}
-
-export type SocialsType =
-  | "telegram"
-  | "instagram"
-  | "facebook"
-  | "linkedin"
-  | "whatsapp"
-  | "twitter";
+export type SocialsCode = "TELEGRAM" | "FACEBOOK" | "INSTAGRAM" | "TWITTER";
 
 export interface CompanySocials {
   id: number;
   name: string;
   type: {
     id: number;
-    name: SocialsType;
-    code: string;
-  };
+  } & NameCodeType<SocialsType, SocialsCode>;
   primary: boolean;
+}
+
+export interface SocialDTOModel {
+  id: number;
+  socialType: NameCodeType<SocialsType, SocialsCode>;
+  socialLink: string;
 }
 
 export interface CompanyInfoModel {
@@ -67,7 +48,8 @@ export interface CompanyInfoModel {
   address: CompanyAddress;
   files: Array<CompanyFiles>;
   characteristicDTOS: Array<CompanyCharacteristicDTOInfo>;
-  phones: Array<CompanyPhones>;
-  emails: Array<CompanyEmails>;
+  phones: Array<ContactsType>;
+  emails: Array<ContactsType>;
   socialAddresses: Array<CompanySocials>;
+  socialDTOS: Array<SocialDTOModel>;
 }

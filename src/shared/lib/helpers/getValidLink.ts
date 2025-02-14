@@ -1,6 +1,7 @@
-import { CompanyEmails, CompanySocials } from "@shared/api/companyInfo/model";
+import { CompanySocials } from "@shared/api/companyInfo/model";
+import { ContactsType } from "@shared/types/common";
 
-export const getValidLink = (link: CompanyEmails | CompanySocials) => {
+export const getValidLink = (link: ContactsType | CompanySocials) => {
   if (link.type.name === "Email" || link.type.name === "Gmail") {
     return `mailto:${link.name}`;
   } else if (link.type.name === "Telegram") {

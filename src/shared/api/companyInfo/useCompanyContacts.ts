@@ -1,9 +1,14 @@
 import { useMemo } from "react";
-import { CompanySocials, SocialsType } from "@shared/api/companyInfo/model";
+import {
+  CompanySocials,
+  SocialDTOModel,
+  SocialsCode,
+  SocialsType,
+} from "@shared/api/companyInfo/model";
 import { $companyInfo } from "@shared/api/companyInfo/services";
 import { useUnit } from "effector-react";
 
-type FilteredSocials = Record<SocialsType, CompanySocials>;
+type FilteredSocials = Record<SocialsCode, SocialDTOModel>;
 
 type GroupedFilesType = Record<
   "primary" | "secondary" | "tertiary" | "quaternary",
@@ -15,7 +20,7 @@ export const useCompanyInfo = () => {
   const phones = data?.phones;
   const name = data?.name;
   const emails = data?.emails;
-  const socials = data?.socialAddresses;
+  const socials = data?.socialDTOS;
   const description = data?.description;
   const address = data?.address;
   const files = data?.files;
@@ -35,7 +40,7 @@ export const useCompanyInfo = () => {
 
   const filteredSocials: FilteredSocials = useMemo(() => {
     return socials?.reduce((acc, curr) => {
-      acc[curr.type.name.toLowerCase() as SocialsType] = curr;
+      acc[curr.socialType.code] = curr;
 
       return acc;
     }, {} as FilteredSocials);

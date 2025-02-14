@@ -45,8 +45,8 @@ const Contacts = () => {
             className={cls.mapInner}
             width={"100%"}
             height={"100%"}
-            latitude={address.latitude}
-            longitude={address.longitude}
+            latitude={address?.latitude}
+            longitude={address?.longitude}
             borderRadius={"var(--radius-lg)"}
             loading={loading}
             error={!!error}
@@ -62,37 +62,47 @@ const Contacts = () => {
             paddings={false}
           >
             <div className={cls.contacts}>
-              <ContactsItem label={t("address")}>
-                {address.address}
-              </ContactsItem>
-              <ContactsItem label={t("email")}>
-                {emails.map((item) => (
-                  <a href={getValidLink(item)} key={item.id}>
-                    {item.name}
-                  </a>
-                ))}
-              </ContactsItem>
-              <ContactsItem label={t("telegram")}>
-                <a href={getValidLink(filteredSocials.telegram)}>
-                  {filteredSocials.telegram.name}
-                </a>
-              </ContactsItem>
-              <ContactsItem label={t("phoneNumber")}>
-                {phones.map((item) => (
-                  <a href={formatPhoneNumber(item.name)} key={item.id}>
-                    {item.name}
-                  </a>
-                ))}
-              </ContactsItem>
-              <ContactsItem label={t("socials")}>
-                <div className={cls.socialList}>
-                  {socials.map((item) => (
+              {!!address && (
+                <ContactsItem label={t("address")}>
+                  {address.address}
+                </ContactsItem>
+              )}
+              {!!(emails && emails.length) && (
+                <ContactsItem label={t("email")}>
+                  {emails.map((item) => (
                     <a href={getValidLink(item)} key={item.id}>
                       {item.name}
                     </a>
                   ))}
-                </div>
-              </ContactsItem>
+                </ContactsItem>
+              )}
+              {!!filteredSocials?.TELEGRAM && (
+                <ContactsItem label={t("telegram")}>
+                  <a href={filteredSocials.TELEGRAM.socialLink}>
+                    {filteredSocials.TELEGRAM.socialType.name}
+                  </a>
+                </ContactsItem>
+              )}
+              {!!phones && phones.length && (
+                <ContactsItem label={t("phoneNumber")}>
+                  {phones.map((item) => (
+                    <a href={formatPhoneNumber(item.name)} key={item.id}>
+                      {item.name}
+                    </a>
+                  ))}
+                </ContactsItem>
+              )}
+              {!!socials && socials.length && (
+                <ContactsItem label={t("socials")}>
+                  <div className={cls.socialList}>
+                    {socials.map((item) => (
+                      <a href={item.socialLink} key={item.id}>
+                        {item.socialType.name}
+                      </a>
+                    ))}
+                  </div>
+                </ContactsItem>
+              )}
             </div>
           </Section>
         )}

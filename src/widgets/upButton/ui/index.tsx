@@ -28,7 +28,7 @@ export const UpButton = memo(() => {
       <Button
         size={"lg"}
         icon={<ArrowUpIcon />}
-        theme={"secondary"}
+        theme={"primary"}
         className={cn(cls.footerButtonUp, {
           [cls.visible]: isVisible,
         })}

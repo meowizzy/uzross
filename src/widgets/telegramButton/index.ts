@@ -1,0 +1,1 @@
+export { FixedSocials } from "./ui";
