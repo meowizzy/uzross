@@ -33,24 +33,24 @@ export const Requisition = () => {
             </div>
           )}
         </div>
-        {!!(emails?.length || socials?.length) && (
-          <div className={cls.links}>
-            {emails?.map((email) => (
-              <div className={cls.linksRow} key={email.id}>
-                <span className={cls.linksRowLabel}>{email.type.name}:</span>
-                <a href={`mailto:${email.name}`}>{email.name}</a>
-              </div>
-            ))}
-            {socials?.map((social) => (
-              <div className={cls.linksRow} key={social.id}>
-                <span className={cls.linksRowLabel}>
-                  {social.socialType.name}:
-                </span>
-                <a href={social.socialLink}>{social.socialLink}</a>
-              </div>
-            ))}
-          </div>
-        )}
+        {/*{!!(emails?.length || socials?.length) && (*/}
+        {/*  <div className={cls.links}>*/}
+        {/*    {emails?.map((email) => (*/}
+        {/*      <div className={cls.linksRow} key={email.id}>*/}
+        {/*        <span className={cls.linksRowLabel}>{email.type.name}:</span>*/}
+        {/*        <a href={`mailto:${email.name}`}>{email.name}</a>*/}
+        {/*      </div>*/}
+        {/*    ))}*/}
+        {/*    {socials?.map((social) => (*/}
+        {/*      <div className={cls.linksRow} key={social.id}>*/}
+        {/*        <span className={cls.linksRowLabel}>*/}
+        {/*          {social.socialType.name}:*/}
+        {/*        </span>*/}
+        {/*        <a href={social.socialLink}>{social.socialLink}</a>*/}
+        {/*      </div>*/}
+        {/*    ))}*/}
+        {/*  </div>*/}
+        {/*)}*/}
       </>
     );
   };

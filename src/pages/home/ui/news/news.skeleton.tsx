@@ -9,29 +9,33 @@ export const NewsSkeleton = () => {
     <div className={cls.newsWrapper}>
       <div className={cls.left}>
         <div className={cls.newsPic}>
-          <Skeleton className={cls.skeletonPic} />
+          <Skeleton className={cls.skeletonPic} theme={"dark"} />
         </div>
         <Skeleton
           width={"120px"}
           height={"14px"}
           borderRadius={"var(--radius-lg)"}
           className={cls.newsDate}
+          theme={"dark"}
         />
         <div className={cls.skeletonTitle}>
           <Skeleton
             width={"100%"}
             height={"16px"}
             borderRadius={"var(--radius-lg)"}
+            theme={"dark"}
           />
           <Skeleton
             width={"40%"}
             height={"16px"}
             borderRadius={"var(--radius-lg)"}
+            theme={"dark"}
           />
           <Skeleton
             width={"45%"}
             height={"16px"}
             borderRadius={"var(--radius-lg)"}
+            theme={"dark"}
           />
         </div>
       </div>
@@ -41,6 +45,7 @@ export const NewsSkeleton = () => {
             width={"120px"}
             height={"18px"}
             borderRadius={"var(--radius-lg)"}
+            theme={"dark"}
           />
         </div>
         {skeletonItems.map((_, idx) => (
@@ -50,6 +55,7 @@ export const NewsSkeleton = () => {
               height={"14px"}
               borderRadius={"var(--radius-lg)"}
               className={cls.newsDate}
+              theme={"dark"}
             />
             <div className={cls.newsItem}>
               <div className={cls.skeletonTitle}>
@@ -57,16 +63,19 @@ export const NewsSkeleton = () => {
                   width={"100%"}
                   height={"16px"}
                   borderRadius={"var(--radius-lg)"}
+                  theme={"dark"}
                 />
                 <Skeleton
                   width={"40%"}
                   height={"16px"}
                   borderRadius={"var(--radius-lg)"}
+                  theme={"dark"}
                 />
                 <Skeleton
                   width={"45%"}
                   height={"16px"}
                   borderRadius={"var(--radius-lg)"}
+                  theme={"dark"}
                 />
               </div>
             </div>

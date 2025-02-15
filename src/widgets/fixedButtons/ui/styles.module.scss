@@ -1,0 +1,68 @@
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(var(--color-primary-rgb), 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(var(--color-primary-rgb), 0);
+  }
+}
+
+.fixedSocials {
+  bottom: 40px;
+  right: 40px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  transform: translateY(90px);
+  transition: transform var(--transition);
+  z-index: 900;
+
+  @media all and (max-width: 640px) {
+    bottom: 20px;
+    right: 20px;
+    transform: translateY(75px);
+  }
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  .fixedSocial {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    transition: transform var(--transition);
+    animation: pulse-animation 2s infinite;
+    border-radius: 50%;
+
+    @media all and (max-width: 640px) {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media all and (min-width: 641px) {
+      &:hover {
+        transform: translateX(-10px);
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .upButton {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+
+    @media all and (max-width: 640px) {
+      width: 35px;
+      height: 35px;
+      margin-top: 35px;
+    }
+  }
+}

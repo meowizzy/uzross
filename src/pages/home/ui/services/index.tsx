@@ -66,7 +66,7 @@ export const Services = () => {
   }
 
   return (
-    <Section title={t("sections.services")} theme={"dark"} ref={ref}>
+    <Section title={t("sections.services")} ref={ref}>
       {renderContent()}
     </Section>
   );

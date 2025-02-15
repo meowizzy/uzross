@@ -2,8 +2,7 @@ import { useEffect, useLayoutEffect } from "react";
 import { AppLayout } from "@app/appLayout";
 import { $companyInfo } from "@shared/api/companyInfo";
 import { dayjsSetup } from "@shared/lib/dayjs";
-import { FixedSocials } from "@widgets/telegramButton";
-import { UpButton } from "@widgets/upButton";
+import { FixedButtons } from "@widgets/fixedButtons";
 import { useUnit } from "effector-react";
 import { useLocation } from "react-router-dom";
 import { AppRouter } from "@providers/router";
@@ -28,8 +27,7 @@ export const App = () => {
   return (
     <AppLayout>
       <AppRouter />
-      <UpButton />
-      <FixedSocials />
+      <FixedButtons />
     </AppLayout>
   );
 };

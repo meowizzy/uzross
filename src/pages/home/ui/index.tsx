@@ -21,8 +21,8 @@ const HomePage = () => {
       <CustomersPartnersSection />
       <PatentsAndLicenses />
       <Products />
-      <Services />
       <News />
+      <Services />
       <Requisition />
     </>
   );

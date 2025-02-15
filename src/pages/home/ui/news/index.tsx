@@ -83,7 +83,11 @@ export const News = () => {
   if (error || (!newsData.length && fulfilled)) return null;
 
   return (
-    <Section title={tHome("sections.news_section.title")} ref={ref}>
+    <Section
+      title={tHome("sections.news_section.title")}
+      theme={"dark"}
+      ref={ref}
+    >
       {renderContent()}
     </Section>
   );
